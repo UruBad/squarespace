@@ -1,7 +1,7 @@
 var clientId = "16b58be2625f489a82bed854635fb8b5";
 
 $(document).ready(function () {
-    if(window.location.indexOf("my-avatar") > -1)    {
+    if(window.location.href.indexOf("my-avatar") > -1)    {
          MyBetch();
     }    
     else if(!!$("select[data-variant-option-name='Size']")){
