@@ -1,7 +1,7 @@
 var clientId = "16b58be2625f489a82bed854635fb8b5";
 
 $(document).ready(function () {
-	alert("1");
+
 });
 
 function GenerateGuid() {
