@@ -17,9 +17,10 @@ $(document).ready(function () {
         $("#dressing-rrom").click(function(){
             $.ajax({
                 type: "GET",
-                url: "http://api.vk.com/method/users.get?user_id=66748 "
+                url: "http://api.vk.com/method/users.get?user_id=66748",
+                dataType: "json"
             });
-           
+           return false;
         });
     }
 });
