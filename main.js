@@ -1,7 +1,7 @@
 var clientId = "16b58be2625f489a82bed854635fb8b5";
 
 $(document).ready(function () {
-
+    $(".sqs-add-to-cart-button").parent().append('<div id="dressing-room" class="sqs-add-to-cart-button sqs-suppress-edit-mode sqs-editable-button"><div class="sqs-add-to-cart-button-inner" style="opacity: 1; visibility: visible;">Add to Dressing Room</div>')
 });
 
 function GenerateGuid() {
