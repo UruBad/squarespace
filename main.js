@@ -1,4 +1,12 @@
 var clientId = "16b58be2625f489a82bed854635fb8b5";
+var setMeasurements = "http://widget.trimirror.com/SetMeasurements?clientId=cb0a7a94dd6f423992c6dcc3a8dd6d58&userId=#userId#";
+var setCharacter = "http://widget.trimirror.com/SetCharacter?clientId=cb0a7a94dd6f423992c6dcc3a8dd6d58&userId=#userId#&character=#character#";
+var checkMeasurementsUrl = "http://widget.trimirror.com/CheckMeasurements?clientId=cb0a7a94dd6f423992c6dcc3a8dd6d58&userId=#userId#";
+var measurementsUrl = "http://widget.trimirror.com/GetMeasurements?clientId=cb0a7a94dd6f423992c6dcc3a8dd6d58&userId=#userId#";
+var setHairUrl = "http://widget.trimirror.com/SetHair?clientId=cb0a7a94dd6f423992c6dcc3a8dd6d58&userId=#userId#&individual=#individual#&hair=#hair#&character=#character#";
+var setShoesUrl = "http://widget.trimirror.com/SetShoes?clientId=cb0a7a94dd6f423992c6dcc3a8dd6d58&userId=#userId#&shoes=#shoes#";
+var individualsUrl = "http://widget.trimirror.com/GetIndividuals?clientId=cb0a7a94dd6f423992c6dcc3a8dd6d58&userId=#userId#&character=#character#";
+var avatarUrls = "http://widget.trimirror.com/GetAvatarUrls?clientId=cb0a7a94dd6f423992c6dcc3a8dd6d58&userId=#userId#&width=#width#&height=#height#";
 
 $(document).ready(function () {
     if(window.location.href.indexOf("my-avatar") > -1)    {
