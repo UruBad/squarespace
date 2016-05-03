@@ -1,12 +1,12 @@
 var clientId = "16b58be2625f489a82bed854635fb8b5";
-var setMeasurements = "https://widget.trimirror.com/SetMeasurements?clientId=" + clientId + "&userId=#userId#";
-var setCharacter = "https://widget.trimirror.com/SetCharacter?clientId=" + clientId + "&userId=#userId#&character=#character#";
-var checkMeasurementsUrl = "https://widget.trimirror.com/CheckMeasurements?clientId=" + clientId + "&userId=#userId#";
-var measurementsUrl = "https://widget.trimirror.com/GetMeasurements?clientId=" + clientId + "&userId=#userId#";
-var setHairUrl = "https://widget.trimirror.com/SetHair?clientId=" + clientId + "&userId=#userId#&individual=#individual#&hair=#hair#&character=#character#";
-var setShoesUrl = "https://widget.trimirror.com/SetShoes?clientId=" + clientId + "&userId=#userId#&shoes=#shoes#";
-var individualsUrl = "https://widget.trimirror.com/GetIndividuals?clientId=" + clientId + "&userId=#userId#&character=#character#";
-var avatarUrls = "https://widget.trimirror.com/GetAvatarUrls?clientId=" + clientId + "&userId=#userId#&width=#width#&height=#height#";
+var setMeasurements = "http://widget.trimirror.com/SetMeasurements?clientId=" + clientId + "&userId=#userId#";
+var setCharacter = "http://widget.trimirror.com/SetCharacter?clientId=" + clientId + "&userId=#userId#&character=#character#";
+var checkMeasurementsUrl = "http://widget.trimirror.com/CheckMeasurements?clientId=" + clientId + "&userId=#userId#";
+var measurementsUrl = "http://widget.trimirror.com/GetMeasurements?clientId=" + clientId + "&userId=#userId#";
+var setHairUrl = "http://widget.trimirror.com/SetHair?clientId=" + clientId + "&userId=#userId#&individual=#individual#&hair=#hair#&character=#character#";
+var setShoesUrl = "http://widget.trimirror.com/SetShoes?clientId=" + clientId + "&userId=#userId#&shoes=#shoes#";
+var individualsUrl = "http://widget.trimirror.com/GetIndividuals?clientId=" + clientId + "&userId=#userId#&character=#character#";
+var avatarUrls = "http://widget.trimirror.com/GetAvatarUrls?clientId=" + clientId + "&userId=#userId#&width=#width#&height=#height#";
 
 $(document).ready(function () {
     if(window.location.href.indexOf("my-avatar") > -1)    {
