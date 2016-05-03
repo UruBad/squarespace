@@ -75,7 +75,7 @@ function MyBetch(){
 '                <img style="display: none;" src="http://widget.trimirror.com/Content/images/biceps-desc.jpg" alt="measurement description" class="measurement-description-img" id="bicepsDesc">' +
 '                <img style="display: none;" src="http://widget.trimirror.com/Content/images/forearm-desc.jpg" alt="measurement description" class="measurement-description-img" id="forearmDesc">' +
 '                <div class="close-measurements-description-icon">x</div>' +
-'                <button style="display:none;width:200px;bottom:10px;right:10px;position:absolute" onclick="" class="button button_widget" id="create-avatar-correct">Let's go shopping</button>' +
+'                <button style="display:none;width:200px;bottom:10px;right:10px;position:absolute" onclick="" class="button button_widget" id="create-avatar-correct">Let\'s go shopping</button>' +
 '            </div>' +
 '        </div>' +
 '    </div>' +
