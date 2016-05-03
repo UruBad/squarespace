@@ -1,0 +1,454 @@
+
+.set-measures-step {
+    font-family: "Ubuntu",Helvetica Neue,Arial,sans;
+    font-size: 16px;
+    height: auto;
+    width: 100%;
+}
+.set-measures-step .measures-list {
+    background: rgba(0, 0, 0, 0) linear-gradient(-200deg, #bababa 73%, #ececec) repeat scroll 0 0;
+}
+.set-measures-step > div:not(.create-avatar-error-container) {
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+    width: 50%;
+}
+.set-measures-step > div:first-child:not(.create-avatar-error-container), .measures-list {
+    padding: 0 2%;
+}
+.set-measures-step > div {
+    margin-bottom: 50px;
+}
+.set-measures-step > div:last-child:not(.create-avatar-error-container) {
+    background: rgba(0, 0, 0, 0) linear-gradient(rgba(93, 93, 93, 0.4) 70%, white 100%) repeat scroll 0 0;
+}
+.set-measures-step h1 {
+    border-bottom: medium none !important;
+    color: white;
+    font-size: 1.8em;
+    font-weight: normal;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.set-measures-step .measurement-units-container {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+}
+.set-measures-step .measurements-unit-icon.active {
+    border: 3px solid white;
+}
+.set-measures-step .measurements-unit-icon {
+    border-radius: 25px;
+    color: white;
+    display: inline-block;
+    font-size: 1em;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 40px;
+}
+.measurements-unit-icon:hover:not(.active) {
+    color: #000000;
+    cursor: pointer;
+}
+.set-measures-step .measurements-group-container {
+    margin-top: 15px;
+    max-height: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.set-measures-step > .measures-list .measurements-group {
+    display: block;
+    margin-top: 2em;
+}
+.set-measures-step #measurementFooter {
+    float: left;
+    height: 26px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    position: absolute;
+    width: 90%;
+}
+.set-measures-step > .measures-list input[type="checkbox"] {
+    position: absolute;
+    top: 5px;
+}
+.set-measures-step > .measures-list label {
+    font-size: 16px;
+    left: 30px;
+}
+.set-measures-step > .measures-list label {
+    color: #fff;
+    font-size: 14px;
+    left: 25px;
+    position: absolute;
+    top: 6px;
+}
+#setMeasurementsButton, .button_widget {
+    background: white none repeat scroll 0 0;
+    border: 1px solid rgba(62, 62, 62, 1);
+    border-radius: 15px;
+    color: #000000;
+    cursor: pointer;
+    font-family: "Ubuntu",Helvetica Neue,Arial,sans;
+    font-size: 16px;
+    outline: medium none;
+    padding: 4px 5px;
+    position: absolute;
+    right: 0;
+    width: 7.5em;
+}
+.button_widget {
+    position: relative;
+}
+#setMeasurementsButton:hover, .button_widget:hover {
+    background-color: rgba(51, 0, 51, 1);
+    border: 1px solid white;
+    color: white;
+}
+#measurementsAvatarLookContainer > div.img-container {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+#measurementsAvatarLookContainer .show-next-avatar-preview-img-icon {
+    background-position: -6px -403px;
+    right: 20px;
+}
+#measurementsAvatarLookContainer .show-next-avatar-preview-img-icon, #measurementsAvatarLookContainer .show-prev-avatar-preview-img-icon {
+    background-image: url("../images/size_play_zoom_icons.png");
+    bottom: 50%;
+    height: 38px;
+    position: absolute;
+    width: 38px;
+}
+#measurementsAvatarLookContainer .show-prev-avatar-preview-img-icon {
+    background-position: -7px -483px;
+    left: 20px;
+}
+#measurementsAvatarLookContainer .icon {
+    cursor: pointer;
+}
+.set-measures-step > .avatar-preview > img {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.set-measures-step .measurement-description-img {
+    display: none;
+    height: 100% !important;
+    position: absolute;
+    width: auto !important;
+    z-index: 6;
+}
+#measurementsAvatarLookContainer .close-measurements-description-icon {
+    display: none;
+    right: 15px;
+    top: 15px;
+}
+#measurementsAvatarLookContainer .close-icon, #measurementsAvatarLookContainer .close-measurements-description-icon {
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-family: cursive;
+    height: 18px;
+    line-height: 0.6em;
+    position: absolute;
+    text-align: center;
+    width: 18px;
+    z-index: 6;
+}
+.set-measures-step > .measures-list .measurements-group > div {
+    box-sizing: border-box;
+    color: white;
+    display: table;
+    font-size: 1.1em;
+    padding-left: 20px;
+    width: 100%;
+}
+.set-measures-step > .measures-list .measurements-group > div > div {
+    box-sizing: border-box;
+    display: table-row;
+}
+.set-measures-step > .measures-list .measurements-group > div > div > div:nth-child(1) {
+    font-size: 1.1em;
+    font-weight: 300;
+    width: 35%;
+}
+.set-measures-step > .measures-list .measurements-group > div > div > div:nth-child(2) {
+    width: 60%;
+}
+.set-measures-step > .measures-list .measurements-group > div > div > div {
+    display: table-cell;
+    padding: 5px 10px 5px 0;
+}
+.slider-container {
+    height: 50px;
+    margin-top: 3px;
+    padding: 3px 3px 0 0;
+    position: relative;
+}
+.ie10 .slider-container {
+    height: 60px !important;
+}
+.set-measures-step > .measures-list .measurements-group > div > div > div:nth-child(3) {
+    width: 10%;
+}
+.set-measures-step .measurement-description-icon {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.9em;
+    font-weight: bold;
+    height: 20px;
+    left: 10px;
+    line-height: 20px;
+    position: relative;
+    text-align: center;
+    top: 5px;
+    width: 20px;
+}
+.measurement-description-icon:hover {
+    background: #330033 none repeat scroll 0 0;
+    color: #fff;
+}
+.create-avatar-error {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    font-size: 1.1em;
+    line-height: 1.4em;
+    margin: 20% 30% 0;
+    padding: 20px 5%;
+    position: relative;
+    width: 40%;
+    z-index: 5;
+}
+.create-avatar-error .header, .msg-box .header {
+    display: inline-block;
+    font-size: inherit;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+.create-avatar-error .red, .msg-box .error {
+    color: red;
+    font-weight: bold;
+}
+.create-avatar-error .green {
+    color: Green;
+    font-weight: bold;
+}
+.create-avatar-error {
+    font-size: 1.1em;
+    line-height: 1.4em;
+}
+.create-avatar-error .red, .msg-box .error {
+    color: red;
+    font-weight: bold;
+}
+.create-avatar-error-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: absolute !important;
+    right: 0;
+    top: 0;
+    z-index: 7;
+}
+.goBetch {
+    clear: both;
+    color: #cd1f8f;
+    display: none;
+    font-size: 130%;
+    font-weight: bold;
+    padding-top: 80px;
+    text-align: center;
+}
+.goBetch a {
+    color: #cd1f8f;
+    text-decoration: underline;
+}
+.set-measures-step > .measures-list h2 {
+    border-bottom: 1px dashed #eeeeee;
+    color: white;
+    cursor: pointer;
+    font-size: 1.3em;
+    font-weight: 300;
+    margin: 0 0 0.2em;
+}
+.set-measures-step > .measures-list h2 > .obligatoriness {
+    font-size: 0.7em;
+    margin-left: 5px;
+}
+.thumbnails-list {
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.thumbnails-list > ul {
+    background-color: white;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+}
+.thumbnails-list > ul > li {
+    cursor: pointer;
+    float: left;
+    margin: 6px;
+    max-height: 30%;
+    max-width: 30%;
+    overflow: hidden;
+    padding: 0;
+    width: 160px;
+}
+.thumbnails-list > ul > li.active_image, .thumbnails-list > ul > li:hover {
+    box-shadow: 0 0 1px 5px white;
+}
+.thumbnails-list > ul > li img {
+    height: 100%;
+    margin-bottom: -3px;
+    width: auto;
+}
+.shoes-list-template.thumbnails-list > ul > li {
+    background-color: white;
+    height: 20%;
+    margin: 6px;
+    padding: 0;
+    text-align: center;
+    width: 30%;
+}
+.shoes-list-template.thumbnails-list > ul {
+    background-color: transparent;
+    height: 100%;
+}
+.shoes-list-template.thumbnails-list {
+    height: 80%;
+}
+.shoes-list-template.thumbnails-list > ul > li.active_image, .shoes-list-template.thumbnails-list > ul > li:hover {
+    box-shadow: 0 0 1px 5px white;
+}
+.cup_size_click_value {
+    z-index: 2;
+}
+.cup_size_click_value .cup_size_value_container {
+    height: 50px;
+    margin-left: -5px;
+    position: absolute;
+    text-align: center;
+    top: -38px;
+    width: 20px;
+    z-index: 2;
+}
+.cup_size_click_value .cup_size_value_container span {
+    color: #d9d9d9;
+}
+.cup_size_click_value .cup_size_value_container.active span, .cup_size_click_value .cup_size_value_container:hover span {
+    color: #ffffff;
+}
+.cup_size_click_value .cup_size_value_container a {
+    background-color: #bababa;
+    border: 1px solid Black;
+    border-radius: 10px;
+    bottom: 0;
+    cursor: pointer !important;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    width: 20px;
+}
+.cup_size_click_value .cup_size_value_container.active a, .cup_size_click_value .cup_size_value_container a:hover {
+    background: #e6e6e6 url("../images/slider/ui-bg_glass_75_e6e6e6_1x400.png") repeat-x scroll 50% 50%;
+    border-color: #e6e6e6;
+}
+.cup_size_click_value .cup_size_value_container span.left {
+    margin-left: -2px;
+}
+.ui-slider {
+    background-color: #d3d3d3 !important;
+    padding: 3px 0 0 1px !important;
+}
+#hairs > ul > li img {
+    height: auto !important;
+}
+@media screen and (max-width: 739px) {
+#create-avatar-correct {
+    width: 130px !important;
+}
+#create-avatar-correct, #create-avatar-back {
+    bottom: auto !important;
+    top: 10px !important;
+}
+#tabs_list {
+    background: #ffffff none repeat scroll 0 0;
+}
+#tabs_list .ui-state-active, #tabs_list .ui-widget-header .ui-state-active, #tabs_list .ui-state-default, #tabs_list .ui-widget-header .ui-state-default {
+    background: transparent none repeat scroll 0 0 !important;
+}
+#tabs_list .ui-state-default, #tabs_list .ui-widget-header .ui-state-default, #tabs_list .ui-state-hover {
+    border: medium none !important;
+}
+#tabs_list .ui-state-default {
+    color: #cd1f8f !important;
+}
+#tabs_list .ui-state-active a {
+    border-bottom: 1px solid #cd1f8f;
+    font-weight: bold;
+}
+#tabs_list .ui-state-hover, #tabs_list .ui-widget-header .ui-state-hover, #tabs_list .ui-state-focus, #tabs_list .ui-widget-header .ui-state-focus {
+    background: #ffffff none repeat scroll 0 0 !important;
+    color: #cd1f8f !important;
+    font-weight: bold;
+}
+#tabs_list .ui-state-active a, #tabs_list .ui-state-active a:link, #tabs_list .ui-state-active a:visited {
+    color: #cd1f8f;
+}
+#tabs_list li:not(:last-child) {
+    margin: 0 !important;
+    width: 33.3% !important;
+}
+#tabs_list .ui-tabs-anchor {
+    padding: 0.3em 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+#tabs_list li.ui-tabs-active {
+    padding-bottom: 0 !important;
+}
+#tabs_list .ui-state-hover a {
+    color: #cd1f8f !important;
+}
+#tabs_list {
+    padding: 0 !important;
+}
+}
+@media (min-width: 768px) {
+.set-measures-step > div:not(.create-avatar-error-container) {
+    height: 439px !important;
+}
+.set-measures-step > div.create-avatar-error-container {
+    height: 483px !important;
+}
+}
+@media (min-width: 992px) {
+.set-measures-step > div:not(.create-avatar-error-container) {
+    height: 600px !important;
+}
+.set-measures-step > div.create-avatar-error-container {
+    height: 650px !important;
+}
+}
+@media (min-width: 1200px) {
+.set-measures-step > div:not(.create-avatar-error-container) {
+    height: 600px !important;
+}
+.set-measures-step > div.create-avatar-error-container {
+    height: 650px !important;
+}
+}
