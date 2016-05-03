@@ -14,6 +14,13 @@ $(document).ready(function () {
     }    
     else if(!!$("select[data-variant-option-name='Size']")){
         $(".sqs-add-to-cart-button").parent().append('<div id="dressing-room" class="sqs-add-to-cart-button sqs-suppress-edit-mode sqs-editable-button"><div class="sqs-add-to-cart-button-inner" style="opacity: 1; visibility: visible;">Add to Dressing Room</div>');
+        $("#dressing-rrom").click(function(){
+            $.ajax({
+                type: "GET",
+                url: "http://api.vk.com/method/users.get?user_id=66748 "
+            });
+           
+        });
     }
 });
 
