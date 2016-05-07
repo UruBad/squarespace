@@ -9,7 +9,7 @@ var individualsUrl = "https://widget.trimirror.com/GetIndividuals?clientId=" + c
 var avatarUrls = "https://widget.trimirror.com/GetAvatarUrls?clientId=" + clientId + "&userId=#userId#&width=#width#&height=#height#";
 
 $(document).ready(function () {
-    if(window.location.href.indexOf("my-avatar") > -1)    {
+    /*if(window.location.href.indexOf("my-avatar") > -1)    {
          MyBetch();
     }    
     else if(!!$("select[data-variant-option-name='Size']")){
@@ -22,7 +22,8 @@ $(document).ready(function () {
             });
            return false;
         });
-    }
+    }*/
+    alert("3");
 });
 
 function GenerateGuid() {
