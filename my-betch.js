@@ -6,7 +6,6 @@ var backTabId = 1;
 var currentCharacter = "";
 
 $(document).ready(function () {
-	console.dir("it's work");
     var trimirror_cookie = $.cookie('trimirror_anonim_user_id');
     if (trimirror_cookie != null) {
         var remember = true;
@@ -46,6 +45,7 @@ $(document).ready(function () {
                     location.reload();
                 }
             });
+            return false;
         }
         return false;
     });
