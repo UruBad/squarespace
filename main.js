@@ -13,6 +13,7 @@ var avatarUrls = "https://widget.trimirror.com/GetAvatarUrls?clientId=" + client
             url:"https://raw.githubusercontent.com/UruBad/squarespace/master/my-betch.css",
             dataType:"script",
             success:function(data){
+                console.log(data);
                  $("head").append("<style>" + data + "</style>");
                  //loading complete code here
             }
