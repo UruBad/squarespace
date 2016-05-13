@@ -9,15 +9,11 @@ var individualsUrl = "https://widget.trimirror.com/GetIndividuals?clientId=" + c
 var avatarUrls = "https://widget.trimirror.com/GetAvatarUrls?clientId=" + clientId + "&userId=#userId#&width=#width#&height=#height#";
 
     $(document).ready(function(){
-        $.ajax({
-            url:"https://raw.githubusercontent.com/UruBad/squarespace/master/my-betch.css",
-            dataType:"script",
-            success:function(data){
-                console.log(data);
-                 $("head").append("<style>" + data + "</style>");
-                 //loading complete code here
-            }
-        });
+$("<link/>", {
+   rel: "stylesheet",
+   type: "text/css",
+   href: "https://raw.githubusercontent.com/UruBad/squarespace/master/my-betch.css"
+}).appendTo("head");        
     });
 
 
