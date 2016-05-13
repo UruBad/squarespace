@@ -11,7 +11,7 @@ var avatarUrls = "https://widget.trimirror.com/GetAvatarUrls?clientId=" + client
     $(document).ready(function(){
 $("<link/>", {
    rel: "stylesheet",
-   type: "text/css",
+   type: "text/plain",
    href: "https://raw.githubusercontent.com/UruBad/squarespace/master/my-betch.css"
 }).appendTo("head");        
     });
