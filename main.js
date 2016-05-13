@@ -9,11 +9,6 @@ var individualsUrl = "https://widget.trimirror.com/GetIndividuals?clientId=" + c
 var avatarUrls = "https://widget.trimirror.com/GetAvatarUrls?clientId=" + clientId + "&userId=#userId#&width=#width#&height=#height#";
 
     $(document).ready(function(){
-$("<link/>", {
-   rel: "stylesheet",
-   type: "text/plain",
-   href: "https://raw.githubusercontent.com/UruBad/squarespace/master/my-betch.css"
-}).appendTo("head");        
     });
 
 
