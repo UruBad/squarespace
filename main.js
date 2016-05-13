@@ -8,22 +8,17 @@ var setShoesUrl = "https://widget.trimirror.com/SetShoes?clientId=" + clientId +
 var individualsUrl = "https://widget.trimirror.com/GetIndividuals?clientId=" + clientId + "&userId=#userId#&character=#character#";
 var avatarUrls = "https://widget.trimirror.com/GetAvatarUrls?clientId=" + clientId + "&userId=#userId#&width=#width#&height=#height#";
 
-$(document).ready(function () {
-    /*if(window.location.href.indexOf("my-avatar") > -1)    {
-         MyBetch();
-    }    
-    else if(!!$("select[data-variant-option-name='Size']")){
-        $(".sqs-add-to-cart-button").parent().append('<div id="dressing-room" class="sqs-add-to-cart-button sqs-suppress-edit-mode sqs-editable-button"><div class="sqs-add-to-cart-button-inner" style="opacity: 1; visibility: visible;">Add to Dressing Room</div>');
-        $("#dressing-room").click(function(){
-            $.ajax({
-                type: "GET",
-                url: "https://api.vk.com/method/users.get?user_id=66748",
-                dataType: "json"
-            });
-           return false;
+    $(document).ready(function(){
+        $.ajax({
+            url:"https://raw.githubusercontent.com/UruBad/squarespace/master/my-betch.css",
+            dataType:"script",
+            success:function(data){
+                 $("<style></style>").appendTo("head").html(data);
+                 //loading complete code here
+            }
         });
-    }*/
-});
+    });
+
 
 function GenerateGuid() {
     function s4() {
