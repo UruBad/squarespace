@@ -254,6 +254,7 @@ $(function () {
 			$.ajax({
 				url: url,
 				method: "post",
+				dataType: "jsonp",
 				success: generateFavorites,
 				error: function (data) {
 					console.log(data);
@@ -268,6 +269,7 @@ $(function () {
 	$.ajax({
 		url: "https://widget.trimirror.com/GetFavorites/?clientId=" + clientId + "&userId=" + GetUserId(),
 		method: "post",
+		dataType: "jsonp",
 		success: generateFavorites,
 		error: function (data) {
 			console.log(data);
