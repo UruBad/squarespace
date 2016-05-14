@@ -266,7 +266,7 @@ $(function () {
 	}
 
 	$.ajax({
-		url: "https://widget.trimirror.com/Favorites/GetFavoritesAjax",
+		url: "https://widget.trimirror.com/GetFavorites/?clientId=" + clientId + "&userId=" + GetUserId(),
 		method: "post",
 		success: generateFavorites,
 		error: function (data) {
