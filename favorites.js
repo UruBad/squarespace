@@ -7,7 +7,7 @@ var measurements_url = "https://widget.trimirror.com/GetMeasurements?clientId=" 
 var video_url = "https://widget.trimirror.com/GetVideoUrl?clientId=" + clientId + "&code=#code#&color=#color#&size=#size#&width=640&height=480&extcode=#extCode#&extcolor=#extColor#&extsize=#extSize#";
 var video_urls = "https://widget.trimirror.com/GetVideoUrls";
 var video_progress = "https://widget.trimirror.com/GetVideoWithProgress";
-var measurements_link = "/pages|/my-avatar";
+var measurements_link = "/pages/my-avatar";
 
 $(function () {
 	function generateFavorites(data) {
@@ -51,12 +51,12 @@ $(function () {
 					'			<div class="favorite-overlay-contents">' +
 					'				<div class="shop-item-actions">' +
                     '                   <div class="look_button" style="display:none;">' +
-                    '                       <a class="action_button" data-url="Favorites/' + actionName + '?code=' + item.code + '&color=' + item.color + '&size=' + item.size + '" data-action="unlook" href="#">' +
+                    '                       <a class="action_button" data-url="https://widget.trimirror.com/Favorites/' + actionName + '?code=' + item.code + '&color=' + item.color + '&size=' + item.size + '" data-action="unlook" href="#">' +
                     '                           <span>+</span>LOOK' +
                     '                       </a>' +
                     '                   </div>' +
                     '                   <div class="bottom_buttons">' +
-                    '                       <a class="action_button" data-url="/Favorites/DeleteFromFavoritestAjax?code=' + item.code + '&color=' + item.color + '&size=' + item.size + '" data-action="remove" href="#">REMOVE</a>' +
+                    '                       <a class="action_button" data-url="https://widget.trimirror.com/Favorites/DeleteFromFavoritestAjax?code=' + item.code + '&color=' + item.color + '&size=' + item.size + '" data-action="remove" href="#">REMOVE</a>' +
                     '                   </div>' +
 					'				</div>' +
 					'			</div>' +
@@ -64,7 +64,7 @@ $(function () {
                     '           <span class="check_look"></span>' +
 					'		</div>' +
 					'		<header class="item-info-name-features-price">' +
-					'			<h4><a href="/Product?name=' + item.name + '">' + item.title + " / " + item.size.toUpperCase() + '</a></h4>' +
+					'			<h4><a href="https://widget.trimirror.com/Product?name=' + item.name + '">' + item.title + " / " + item.size.toUpperCase() + '</a></h4>' +
 					/*'			<span class="features">' + item.colorTitle + ', ' + item.sizeTitle + '</span><br>' +*/
 					'			<span class="price">' + item.priceString + '</span>' +
 					'		</header>';
@@ -266,7 +266,7 @@ $(function () {
 	}
 
 	$.ajax({
-		url: "/Favorites/GetFavoritesAjax",
+		url: "https://widget.trimirror.com/Favorites/GetFavoritesAjax",
 		method: "post",
 		success: generateFavorites,
 		error: function (data) {
