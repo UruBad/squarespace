@@ -1,223 +1,117 @@
-/**
-* jQuery.UI.iPad plugin
-* Copyright (c) 2010 Stephen von Takach
-* licensed under MIT.
-* Date: 27/8/2010
-*
-* Project Home: 
-* http://code.google.com/p/jquery-ui-for-ipad-and-iphone/
-*/
+/*!
+ * jQuery Cookie Plugin v1.4.1
+ * https://github.com/carhartl/jquery-cookie
+ *
+ * Copyright 2013 Klaus Hartl
+ * Released under the MIT license
+ */
+(function (factory) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD
+		define(['jquery'], factory);
+	} else if (typeof exports === 'object') {
+		// CommonJS
+		factory(require('jquery'));
+	} else {
+		// Browser globals
+		factory(jQuery);
+	}
+}(function ($) {
 
+	var pluses = /\+/g;
 
-$(function () {
-    //
-    // Extend jQuery feature detection
-    //
-    $.extend($.support, {
-        touch: "ontouchend" in document
-    });
+	function encode(s) {
+		return config.raw ? s : encodeURIComponent(s);
+	}
 
-    //
-    // Hook up touch events
-    //
-    if ($.support.touch) {
-        document.addEventListener("touchstart", iPadTouchHandler, false);
-        document.addEventListener("touchmove", iPadTouchHandler, false);
-        document.addEventListener("touchend", iPadTouchHandler, false);
-        document.addEventListener("touchcancel", iPadTouchHandler, false);
-    }
-});
+	function decode(s) {
+		return config.raw ? s : decodeURIComponent(s);
+	}
 
+	function stringifyCookieValue(value) {
+		return encode(config.json ? JSON.stringify(value) : String(value));
+	}
 
-var lastTap = null;			// Holds last tapped element (so we can compare for double tap)
-var tapValid = false;			// Are we still in the .6 second window where a double tap can occur
-var tapTimeout = null;			// The timeout reference
+	function parseCookieValue(s) {
+		if (s.indexOf('"') === 0) {
+			// This is a quoted cookie as according to RFC2068, unescape...
+			s = s.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+		}
 
-function cancelTap() {
-    tapValid = false;
-}
+		try {
+			// Replace server-side written pluses with spaces.
+			// If we can't decode the cookie, ignore it, it's unusable.
+			// If we can't parse the cookie, ignore it, it's unusable.
+			s = decodeURIComponent(s.replace(pluses, ' '));
+			return config.json ? JSON.parse(s) : s;
+		} catch(e) {}
+	}
 
+	function read(s, converter) {
+		var value = config.raw ? s : parseCookieValue(s);
+		return $.isFunction(converter) ? converter(value) : value;
+	}
 
-var rightClickPending = false;	// Is a right click still feasible
-var rightClickEvent = null;		// the original event
-var holdTimeout = null;			// timeout reference
-var cancelMouseUp = false;		// prevents a click from occuring as we want the context menu
+	var config = $.cookie = function (key, value, options) {
 
+		// Write
 
-function cancelHold() {
-    if (rightClickPending) {
-        window.clearTimeout(holdTimeout);
-        rightClickPending = false;
-        rightClickEvent = null;
-    }
-}
+		if (value !== undefined && !$.isFunction(value)) {
+			options = $.extend({}, config.defaults, options);
 
-function startHold(event) {
-    if (rightClickPending)
-        return;
+			if (typeof options.expires === 'number') {
+				var days = options.expires, t = options.expires = new Date();
+				t.setTime(+t + days * 864e+5);
+			}
 
-    rightClickPending = true; // We could be performing a right click
-    rightClickEvent = (event.changedTouches)[0];
-    holdTimeout = window.setTimeout("doRightClick();", 800);
-}
+			return (document.cookie = [
+				encode(key), '=', stringifyCookieValue(value),
+				options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+				options.path    ? '; path=' + options.path : '',
+				options.domain  ? '; domain=' + options.domain : '',
+				options.secure  ? '; secure' : ''
+			].join(''));
+		}
 
+		// Read
 
-function doRightClick() {
-    rightClickPending = false;
+		var result = key ? undefined : {};
 
-    //
-    // We need to mouse up (as we were down)
-    //
-    var first = rightClickEvent,
-		simulatedEvent = document.createEvent("MouseEvent");
-    simulatedEvent.initMouseEvent("mouseup", true, true, window, 1, first.screenX, first.screenY, first.clientX, first.clientY,
-			false, false, false, false, 0, null);
-    first.target.dispatchEvent(simulatedEvent);
+		// To prevent the for loop in the first place assign an empty array
+		// in case there are no cookies at all. Also prevents odd result when
+		// calling $.cookie().
+		var cookies = document.cookie ? document.cookie.split('; ') : [];
 
-    //
-    // emulate a right click
-    //
-    simulatedEvent = document.createEvent("MouseEvent");
-    simulatedEvent.initMouseEvent("mousedown", true, true, window, 1, first.screenX, first.screenY, first.clientX, first.clientY,
-			false, false, false, false, 2, null);
-    first.target.dispatchEvent(simulatedEvent);
+		for (var i = 0, l = cookies.length; i < l; i++) {
+			var parts = cookies[i].split('=');
+			var name = decode(parts.shift());
+			var cookie = parts.join('=');
 
-    //
-    // Show a context menu
-    //
-    simulatedEvent = document.createEvent("MouseEvent");
-    simulatedEvent.initMouseEvent("contextmenu", true, true, window, 1, first.screenX + 50, first.screenY + 5, first.clientX + 50, first.clientY + 5,
-                                  false, false, false, false, 2, null);
-    first.target.dispatchEvent(simulatedEvent);
+			if (key && key === name) {
+				// If second argument (value) is a function it's a converter...
+				result = read(cookie, value);
+				break;
+			}
 
+			// Prevent storing a cookie that we couldn't decode.
+			if (!key && (cookie = read(cookie)) !== undefined) {
+				result[name] = cookie;
+			}
+		}
 
-    //
-    // Note:: I don't mouse up the right click here however feel free to add if required
-    //
+		return result;
+	};
 
+	config.defaults = {};
 
-    cancelMouseUp = true;
-    rightClickEvent = null; // Release memory
-}
+	$.removeCookie = function (key, options) {
+		if ($.cookie(key) === undefined) {
+			return false;
+		}
 
+		// Must not alter options, thus extending a fresh object...
+		$.cookie(key, '', $.extend({}, options, { expires: -1 }));
+		return !$.cookie(key);
+	};
 
-//
-// mouse over event then mouse down
-//
-function iPadTouchStart(event) {
-    var touches = event.changedTouches,
-		first = touches[0],
-		type = "mouseover",
-		simulatedEvent = document.createEvent("MouseEvent");
-    //
-    // Mouse over first - I have live events attached on mouse over
-    //
-    simulatedEvent.initMouseEvent(type, true, true, window, 1, first.screenX, first.screenY, first.clientX, first.clientY,
-                            false, false, false, false, 0, null);
-    first.target.dispatchEvent(simulatedEvent);
-
-    type = "mousedown";
-    simulatedEvent = document.createEvent("MouseEvent");
-
-    simulatedEvent.initMouseEvent(type, true, true, window, 1, first.screenX, first.screenY, first.clientX, first.clientY,
-                            false, false, false, false, 0, null);
-    first.target.dispatchEvent(simulatedEvent);
-
-
-    if (!tapValid) {
-        lastTap = first.target;
-        tapValid = true;
-        tapTimeout = window.setTimeout("cancelTap();", 600);
-        startHold(event);
-    }
-    else {
-        window.clearTimeout(tapTimeout);
-
-        //
-        // If a double tap is still a possibility and the elements are the same
-        //	Then perform a double click
-        //
-        if (first.target == lastTap) {
-            lastTap = null;
-            tapValid = false;
-
-            type = "click";
-            simulatedEvent = document.createEvent("MouseEvent");
-
-            simulatedEvent.initMouseEvent(type, true, true, window, 1, first.screenX, first.screenY, first.clientX, first.clientY,
-                         	false, false, false, false, 0/*left*/, null);
-            first.target.dispatchEvent(simulatedEvent);
-
-            type = "dblclick";
-            simulatedEvent = document.createEvent("MouseEvent");
-
-            simulatedEvent.initMouseEvent(type, true, true, window, 1, first.screenX, first.screenY, first.clientX, first.clientY,
-                         	false, false, false, false, 0/*left*/, null);
-            first.target.dispatchEvent(simulatedEvent);
-        }
-        else {
-            lastTap = first.target;
-            tapValid = true;
-            tapTimeout = window.setTimeout("cancelTap();", 600);
-            startHold(event);
-        }
-    }
-}
-
-function iPadTouchHandler(event) {
-    var type = "",
-		button = 0; /*left*/
-
-    if (event.touches.length > 1)
-        return;
-
-    switch (event.type) {
-        case "touchstart":
-            if ($(event.changedTouches[0].target).is("select")) {
-                return;
-            }
-            iPadTouchStart(event); /*We need to trigger two events here to support one touch drag and drop*/
-            //event.preventDefault();
-            return false;
-            break;
-
-        case "touchmove":
-            cancelHold();
-            type = "mousemove";
-            //event.preventDefault();
-            break;
-
-        case "touchend":
-            if (cancelMouseUp) {
-                cancelMouseUp = false;
-                //event.preventDefault();
-                return false;
-            }
-            cancelHold();
-            type = "mouseup";
-            break;
-
-        default:
-            return;
-    }
-
-    var touches = event.changedTouches,
-		first = touches[0],
-		simulatedEvent = document.createEvent("MouseEvent");
-
-    simulatedEvent.initMouseEvent(type, true, true, window, 1, first.screenX, first.screenY, first.clientX, first.clientY,
-                            false, false, false, false, button, null);
-
-    first.target.dispatchEvent(simulatedEvent);
-
-    if (type == "mouseup" && tapValid && first.target == lastTap) {	// This actually emulates the ipads default behaviour (which we prevented)
-        simulatedEvent = document.createEvent("MouseEvent");		// This check avoids click being emulated on a double tap
-
-        simulatedEvent.initMouseEvent("click", true, true, window, 1, first.screenX, first.screenY, first.clientX, first.clientY,
-                            false, false, false, false, button, null);
-
-        first.target.dispatchEvent(simulatedEvent);
-    }
-}
-
-
+}));
