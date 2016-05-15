@@ -89,8 +89,8 @@ var product_code = "";
             success: function (data) {
                 console.dir(data);
                 if (data.isSuccess) {
-                    $('#size').val(data.size.toLowerCase());
-                    $('#size').trigger("chosen:updated");
+                    $("select[data-variant-option-name='Size']").val(data.size.toUpperCase());
+                    $("select[data-variant-option-name='Size']").trigger("chosen:updated");
                     updatePictures(true);
                 }
             }
