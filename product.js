@@ -97,7 +97,7 @@ var product_code = "";
         });
     });
 
-fucntion AddToFavorites(){
+function AddToFavorites(){
 		var code = $("#trimirror_product_code").val();
 		var color = "";
 		var size = $("select[data-variant-option-name='Size']").val();
