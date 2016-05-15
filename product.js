@@ -8,6 +8,8 @@ var product_code = "";
     var video_progress = "https://widget.trimirror.com/GetVideoWithProgress";
     
     $(function () {
+    	$(".chosen-container").hide();
+    	$("select[data-variant-option-name='Size']").show();
         trimirror_code = $("#trimirror_product_code").val();
         product_code = trimirror_code;
         shotUrls = shotUrls.replace("#code#", trimirror_code);
