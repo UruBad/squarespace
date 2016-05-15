@@ -8,7 +8,7 @@ $(function () {
     $('<div><button class="sqs-suppress-edit-mode sqs-editable-button" id="side-by-side-button"><div class="sqs-add-to-cart-button-inner" id="yui_3_17_2_3_1463297059130_2963">Compare side-by-side</div></button></div>').insertAfter($(".sqs-add-to-cart-button-wrapper"));
     $("#side-by-side-button").click(function () {
         $("#side-by-side").fadeIn("slow");
-        startSize = $("#size").val();
+        startSize = $("select[data-variant-option-name='Size']").val();
         UpdateSizes(startSize);
     });
     $(".side-by-side-size:not(.active)").click(function () {
@@ -17,8 +17,8 @@ $(function () {
     $("#side-by-side-close").click(function () {
         $('#side-by-side').fadeOut('slow');
         if (updateSize != startSize) {
-            $("#size").val(updateSize);
-            $("#size").trigger("chosen:updated");
+            $("select[data-variant-option-name='Size']").val(updateSize);
+            $("select[data-variant-option-name='Size']").trigger("chosen:updated");
         }
         return false;
     });
@@ -84,7 +84,7 @@ function UpdateSizes(current_size) {
 
 function GetShotUrlsSideBySide(size, container, container2) {
     if (typeof sideBySideImages[size] == 'undefined') {
-        var color = $("#color").val();
+        var color = "";
         var currentUrl = shotUrls.replace("#color#", color).replace("#size#", size).replace("#userId#", GetUserId());
         var url = currentUrl.replace("#width#", Math.ceil($("#" + container).width())).replace("#height#", Math.ceil($("#" + container).height()));
         $.ajax({
