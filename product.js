@@ -98,11 +98,9 @@ var product_code = "";
     });
 
 fucntion AddToFavorites(){
-		var code = $("#code").val();
-		var color = $("#color").val();
-		if (color == undefined)
-			color = "";
-		var size = $("#size").val();
+		var code = $("#trimirror_product_code").val();
+		var color = "";
+		var size = $("select[data-variant-option-name='Size']").val();
 
 		$.ajax({
 			url: "/Favorites/AddToFavoritesAjax",
@@ -121,10 +119,8 @@ fucntion AddToFavorites(){
         $(".timer_container .timer-loader").show();
         addTime = typeof addTime !== 'undefined' ? addTime : false;
         $("#preloader").show();
-        var color = $("#color").val();
-        if (color == undefined)
-            color = "";
-        var size = $("#size").val();
+        var color = "";
+        var size = $("select[data-variant-option-name='Size']").val();
 
         // Avatar pictures
         var templateUrl = "http://widget.trimirror.com/GetShotUrls?clientId=" + clientId + "&code=" + product_code + "&color=#color#&size=#size#&width=#width#&height=#height#&userId=#userId#&jpg";
