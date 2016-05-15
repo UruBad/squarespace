@@ -174,7 +174,7 @@ function AddToFavorites(){
     }
 
     function IsImageOk(img) {
-        if (!img.complete) {
+        if (!img || !img.complete) {
             return false;
         }
 
