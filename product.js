@@ -10,7 +10,7 @@ var product_code = "";
     $(function () {
         trimirror_code = $("#trimirror_product_code").val();
         product_code = trimirror_code;
-        shotUrls = shotUrls.replace("#code#", trimirror_code)
+        shotUrls = shotUrls.replace("#code#", trimirror_code);
         trimirror_name = $("h1.product-title").html();
         trimirror_size = $("select[data-variant-option-name='Size']").val();
         trimirror_color = ""; //$("#color").val();
