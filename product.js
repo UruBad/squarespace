@@ -14,10 +14,6 @@ var product_code = "";
         trimirror_name = $("h1.product-title").html();
         trimirror_size = $("select[data-variant-option-name='Size']").val();
         trimirror_color = ""; //$("#color").val();
-        for (var size in $("select[data-variant-option-name='Size'] option"))
-        {
-        	trimirror_sizes.push({ "Name": size.val(), "Title": size.val() });
-        }
 	for (var i = 0; i < $("select[data-variant-option-name='Size'] option").length; i++) {
 		var size = $($("select[data-variant-option-name='Size'] option")[i]).val();
 		trimirror_sizes.push({ "Name": size.val(), "Title": size.val() });	
