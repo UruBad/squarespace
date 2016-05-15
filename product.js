@@ -123,7 +123,7 @@ function AddToFavorites(){
         var size = $("select[data-variant-option-name='Size']").val();
 
         // Avatar pictures
-        var templateUrl = "http://widget.trimirror.com/GetShotUrls?clientId=" + clientId + "&code=" + product_code + "&color=#color#&size=#size#&width=#width#&height=#height#&userId=#userId#&jpg";
+        var templateUrl = "https://widget.trimirror.com/GetShotUrls?clientId=" + clientId + "&code=" + product_code + "&color=#color#&size=#size#&width=#width#&height=#height#&userId=#userId#&jpg";
 
         var currentUrl = templateUrl.replace("#color#", color).replace("#size#", size).replace("#userId#", GetUserId());
         var url = currentUrl.replace("#width#", "650").replace("#height#", "845");
