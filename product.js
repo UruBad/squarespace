@@ -28,7 +28,8 @@ var product_code = "";
         });
         // Update pictures if color or size are changed
         //$("#color").chosen().change(function () { updatePictures(); });
-        $("select[data-variant-option-name='Size']").chosen().change(function () { updatePictures(); });
+        $("select[data-variant-option-name='Size']").chosen({disable_search: true}).change(function () { updatePictures(); });
+        $(".chosen-results li").first().hide();
 
         // Hide preloader after image load
         $(".thumbnailSlider .slides img")
