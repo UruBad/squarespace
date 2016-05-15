@@ -5,7 +5,8 @@ var flexslider = null;
 var isTension = true;
 
 $(function () {
-    $(".side-by-side-button").click(function () {
+    $('<div><button class="sqs-suppress-edit-mode sqs-editable-button" id="side-by-side-button"><div class="sqs-add-to-cart-button-inner" id="yui_3_17_2_3_1463297059130_2963">Compare side-by-side</div></button></div>').insertAfter($(".sqs-add-to-cart-button-wrapper"));
+    $("#side-by-side-button").click(function () {
         $("#side-by-side").fadeIn("slow");
         startSize = $("#size").val();
         UpdateSizes(startSize);
