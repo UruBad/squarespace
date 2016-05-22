@@ -92,6 +92,8 @@ var product_code = "";
             success: function (data) {
                 console.dir(data);
                 if (data.isSuccess) {
+                    console.log(data.size);
+                    console.log($("select[data-variant-option-name='Size']"));
                     $("select[data-variant-option-name='Size']").val(data.size.toUpperCase());
                     $("select[data-variant-option-name='Size']").trigger("chosen:updated");
                     updatePictures(true);
