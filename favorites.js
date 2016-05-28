@@ -21,7 +21,7 @@ $(function () {
 		trimirror_extsize = "";
 		trimirror_extcolor = "";
 
-		if (data.count > 0) {
+		if (data.isSuccess && data.items.count > 0) {
 			html =
 				'<section class="row">' +
 				'	<div class="col-sm-6 col-xs-12">' +
@@ -179,7 +179,21 @@ $(function () {
 		});
 
 		if (data.items.length > 0) {
-		    var url = data.urls.replace("#userId#", GetUserId());
+		    var url = "https://widget.trimirror.com/GetShotUrls?clientId=" + clientId + "&code=#code#&color=#color#&size=#size#&extcode=#extcode#&extcolor=#extcolor#&extsize=#extsize#&width=430&height=585&userId=#userId#&jpg";
+		    url = url.replace("#userId#", GetUserId());
+		    var extItem = false
+		    for(var c = 0, c < data.items.length, c++){
+		    	var itemLook = data.items[c];
+		    	if(itemLook.look){
+		    		if(!extItem){
+		    			url.replace("#code#", itemLook.code).replace("#size#", itemLook.size).replace("#color#", itemLook.color);
+		    			extItem = true;
+		    		} else {
+		    			url.replace("#extcode#", itemLook.code).replace("#extsize#", itemLook.size).replace("#extcolor#", itemLook.color);
+		    			break;
+		    		}
+		    	}
+		    }
 		    $.ajax({
 		        url: url,
 		        data: {},
@@ -258,7 +272,7 @@ $(function () {
 				success: generateFavorites,
 				error: function (data) {
 					console.log(data);
-					alert("An error occured. Refresh the page and try again.");
+					//alert("An error occured. Refresh the page and try again.");
 				}
 			});
 		});
