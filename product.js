@@ -14,6 +14,7 @@ var product_code = "";
         product_code = trimirror_code;
         shotUrls = shotUrls.replace("#code#", trimirror_code);
         trimirror_name = $("h1.product-title").html();
+        console.log($("select[data-variant-option-name='Size']"));
         trimirror_size = $("select[data-variant-option-name='Size']").val();
         trimirror_color = ""; //$("#color").val();
 	for (var i = 0; i < $("select[data-variant-option-name='Size'] option").length; i++) {
