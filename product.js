@@ -128,7 +128,7 @@ function AddToFavorites(){
         addTime = typeof addTime !== 'undefined' ? addTime : false;
         $("#preloader").show();
         var color = "";
-        var size = $("select[data-variant-option-name='Size']").val();
+        var size = select_size.val();
 
         // Avatar pictures
         var templateUrl = "https://widget.trimirror.com/GetShotUrls?clientId=" + clientId + "&code=" + product_code + "&color=#color#&size=#size#&width=#width#&height=#height#&userId=#userId#&jpg";
