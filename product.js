@@ -7,7 +7,7 @@ var select_size;
     var trimirror_url = "https://widget.trimirror.com";
     var video_urls = "https://widget.trimirror.com/GetVideoUrls";
     var video_progress = "https://widget.trimirror.com/GetVideoWithProgress";
-    var addToFavorites = "https://widget.trimirror.com/AddFavorites?clientId=" + trimirror_clientId
+    var addToFavorites = "https://widget.trimirror.com/LookFavorites?clientId=" + trimirror_clientId
     
     $(function () {
     	$('<div><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner" id="yui_3_17_2_3_1463297059130_2963">Add to Dressing Room</div></button></div>').insertAfter($(".sqs-add-to-cart-button-wrapper"));
