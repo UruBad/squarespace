@@ -117,7 +117,7 @@ function AddToFavorites(){
 		var imgUrl = $("#productThumbnails img").first().attr("data-image");
 		$.ajax({
 			url: addToFavorites,
-			data: "code=" + code + "&color=" + color + "&size=" + size + "&userId=" + GetUserId() + "&title=" + encodeURI(title) + "&price=" + price + "&imgUrl=" + imgUrl,
+			data: "code=" + code + "&color=" + color + "&size=" + size + "&userId=" + GetUserId() + "&title=" + encodeURI(title) + "&price=" + price + "&imgUrl=" + encodeURI(imgUrl),
 			method: "post",
 			success: UpdateFavorites,
 			error: function (data) {
