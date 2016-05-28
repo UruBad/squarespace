@@ -182,7 +182,7 @@ $(function () {
 		    var url = "https://widget.trimirror.com/GetShotUrls?clientId=" + clientId + "&code=#code#&color=#color#&size=#size#&extcode=#extcode#&extcolor=#extcolor#&extsize=#extsize#&width=430&height=585&userId=#userId#&jpg";
 		    url = url.replace("#userId#", GetUserId());
 		    var extItem = false
-		    for (var c = 0, c < data.items.length; c++) {
+		    for (var c = 0; c < data.items.length; c++) {
 		    	var itemLook = data.items[c];
 		    	if(itemLook.look){
 		    		if(!extItem){
