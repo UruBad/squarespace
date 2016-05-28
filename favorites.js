@@ -104,10 +104,10 @@ $(function () {
 				'				<div id="preloader"></div>' +
 				'				<ul class="slides" id="dressing_slides">';
 
-			for (i = 0, len = data.slides.length; i < len; ++i) {
-			    item = data.slides[i];
+
+			for (i = 0, i < 3; ++i) {
 			    html += '<li><img style="display:none;" src=""/></li>';
-			}
+			}		    	
 
 			shareLink = shareLink.replace("#link#", encodeURIComponent(window.location.href)).replace("#items#", itemsNames.substring(0, itemsNames.length - 1)) + '&img=' + data.slides[0];
 			html +=
