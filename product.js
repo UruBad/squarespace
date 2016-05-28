@@ -10,6 +10,10 @@ var select_size;
     var addToFavorites = "https://widget.trimirror.com/AddFavorites?clientId=" + trimirror_clientId
     
     $(function () {
+    	$('<div><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner" id="yui_3_17_2_3_1463297059130_2963">Add to Dressing Room</div></button></div>').insertAfter($(".sqs-add-to-cart-button-wrapper"));
+    	$("#add-to-favorites").click(function(){
+    		AddToFavorites();
+    	});
     	$(".chosen-container").hide();
     	$("select[data-variant-option-name='Size']").show();
         trimirror_code = $("#trimirror_product_code").val();
