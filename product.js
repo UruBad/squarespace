@@ -7,6 +7,7 @@ var select_size;
     var trimirror_url = "https://widget.trimirror.com";
     var video_urls = "https://widget.trimirror.com/GetVideoUrls";
     var video_progress = "https://widget.trimirror.com/GetVideoWithProgress";
+    var addToFavorites = "https://widget.trimirror.com/AddFavorites?clientId=" + trimirror_clientId
     
     $(function () {
     	$(".chosen-container").hide();
@@ -107,10 +108,12 @@ function AddToFavorites(){
 		var code = $("#trimirror_product_code").val();
 		var color = "";
 		var size = $("select[data-variant-option-name='Size']").val();
-
+		var title = $("#productDetails h1").html();
+		var price = $(".sqs-money-native").html();
+		var imgUrl = $("#productThumbnails img").first().attr("data-image");
 		$.ajax({
-			url: "/Favorites/AddToFavoritesAjax",
-			data: "code=" + code + "&color=" + color + "&size=" + size,
+			url: "https://widget.trimirror.com/AddFavorites",
+			data: "code=" + code + "&color=" + color + "&size=" + size + "&userId=" + GetUserId() + "&title=" + encodeUri(title) + "&price=" + price + "&imgUrl=" + imgUrl,
 			method: "post",
 			success: UpdateFavorites,
 			error: function (data) {
