@@ -12,7 +12,7 @@ var measurements_link = "/pages/my-avatar";
 $(function () {
 	function generateFavorites(data) {
 		UpdateFavorites(data);
-
+		console.log(data);
 		var html = "";
 		trimirror_code = "";
 		trimirror_size = "";
