@@ -9,16 +9,13 @@ var select_size;
     var video_progress = "https://widget.trimirror.com/GetVideoWithProgress";
     
     $(function () {
-    	select_size = $("select[data-variant-option-name='Size']").chosen({disable_search: true});
     	$(".chosen-container").hide();
     	$("select[data-variant-option-name='Size']").show();
         trimirror_code = $("#trimirror_product_code").val();
         product_code = trimirror_code;
         shotUrls = shotUrls.replace("#code#", trimirror_code);
         trimirror_name = $("h1.product-title").html();
-        console.log("Select = " + select_size.val());
-        //console.log();
-        trimirror_size = select_size.val();
+        trimirror_size = $("select[data-variant-option-name='Size']").val();
         trimirror_color = ""; //$("#color").val();
 	for (var i = 0; i < $("select[data-variant-option-name='Size'] option").length; i++) {
 		var size = $($("select[data-variant-option-name='Size'] option")[i]).val();
@@ -28,11 +25,11 @@ var select_size;
             trimirror_color = $("#color").val();
         });*/
         $("select[data-variant-option-name='Size']").change(function () {
-            trimirror_size = $("#size").val();
+            trimirror_size = $("select[data-variant-option-name='Size']").val();
         });
         // Update pictures if color or size are changed
         //$("#color").chosen().change(function () { updatePictures(); });
-        select_size.change(function () { updatePictures(); });
+        $("select[data-variant-option-name='Size']").chosen({disable_search: true}).change(function () { updatePictures(); });
         $(".chosen-results li").first().hide();
 
         // Hide preloader after image load
