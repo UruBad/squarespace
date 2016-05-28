@@ -21,7 +21,7 @@ $(function () {
 		trimirror_extsize = "";
 		trimirror_extcolor = "";
 
-		if (data.isSuccess && data.items.count > 0) {
+		if (data.isSuccess && data.items.length > 0) {
 			html =
 				'<section class="row">' +
 				'	<div class="col-sm-6 col-xs-12">' +
