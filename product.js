@@ -110,7 +110,7 @@ var select_size;
 
 function AddToFavorites(){
 		var code = $("#trimirror_product_code").val();
-		var color = "";
+		var color = "white";
 		var size = $("select[data-variant-option-name='Size']").val();
 		var title = $("#productDetails h1").html();
 		var price = 10;//$(".sqs-money-native").html();
