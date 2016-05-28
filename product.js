@@ -1,4 +1,5 @@
 var product_code = "";
+var select_size;
  var trimirror_clientId = clientId;
     var trimirror_sizes = [];
     var shotUrls = "https://widget.trimirror.com/GetShotUrls?clientId=" + trimirror_clientId + "&code=#code#&color=#color#&size=#size#&width=#width#&height=#height#&userId=#userId#&jpg";
@@ -29,7 +30,9 @@ var product_code = "";
         });
         // Update pictures if color or size are changed
         //$("#color").chosen().change(function () { updatePictures(); });
-        $("select[data-variant-option-name='Size']").chosen({disable_search: true}).change(function () { updatePictures(); });
+        select_size = $("select[data-variant-option-name='Size']").chosen({disable_search: true});
+        console.log(select_size);
+        select_size.change(function () { updatePictures(); });
         $(".chosen-results li").first().hide();
 
         // Hide preloader after image load
