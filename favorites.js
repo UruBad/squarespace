@@ -109,7 +109,23 @@ $(function () {
 			    html += '<li><img style="display:none;" src=""/></li>';
 			}		    	
 
-			shareLink = "";//shareLink.replace("#link#", encodeURIComponent(window.location.href)).replace("#items#", itemsNames.substring(0, itemsNames.length - 1)) + '&img=' + data.slides[0];
+		    var shotUrl = "https://widget.trimirror.com/GetShot?clientId=" + clientId + "&code=#code#&color=#color#&size=#size#&extcode=#extcode#&extcolor=#extcolor#&extsize=#extsize#&width=430&height=585&view=1&userId=#userId#&jpg";
+		    shotUrl = url.replace("#userId#", GetUserId());
+		    var extItemShot = false
+		    for (var c = 0; c < data.items.length; c++) {
+		    	var itemLook = data.items[c];
+		    	if(itemLook.look){
+		    		if(!extItemShot){
+		    			shotUrl = shotUrl.replace("#code#", itemLook.code).replace("#size#", itemLook.size).replace("#color#", itemLook.color);
+		    			extItemShot = true;
+		    		} else {
+		    			shotUrl = shotUrl.replace("#extcode#", itemLook.code).replace("#extsize#", itemLook.size).replace("#extcolor#", itemLook.color);
+		    			break;
+		    		}
+		    	}
+		    }			
+
+			shareLink = shareLink.replace("#link#", encodeURIComponent(window.location.href)).replace("#items#", itemsNames.substring(0, itemsNames.length - 1)) + '&img=' + shotUrl;
 			html +=
 				'				</ul>' +
                 '     <div id="measurements_values">' +
