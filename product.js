@@ -15,7 +15,8 @@ var select_size;
 	var counter = 1;
                 for (var i = 1; i <= 6; i++)
                 {
-                    content += '<li data-target="' + counter + '" style="' + (i == 1 ? "display:block" : "display:none") + "' class="' + (i == 1 ? "active" : "") + '">';                    content += '<a href="#" data-legend="true" class="smallThumbnailsImage">';
+                    content += '<li data-target="' + counter + '" style="' + (i == 1 ? "display:block" : "display:none") + '" class="' + (i == 1 ? "active" : "") + '">';                    
+                    content += '<a href="#" data-legend="true" class="smallThumbnailsImage">';
                     content += '<img src="http://static1.squarespace.com/static/573ff47b2eeb81d00cc8aea3/t/574ae697b654f95fce42c5ca/1464526487696/Content_images_spin.gif" data-src="" alt=" ">';
                     content += '</a></li>';
                     counter++;
