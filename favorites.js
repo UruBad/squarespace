@@ -264,7 +264,7 @@ $(function () {
 		// Remove and Look
 		$(".shop-item-actions .action_button").click(function () {
 			var t = $(this);
-			var url = t.attr("data-url");
+			var url = trimirror_url + t.attr("data-url");
 			$.ajax({
 				url: url,
 				method: "post",
