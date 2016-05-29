@@ -113,7 +113,7 @@ function AddToFavorites(){
 		var color = "";
 		var size = $("select[data-variant-option-name='Size']").val();
 		var title = $("#productDetails h1").html();
-		var price = 10;//$(".sqs-money-native").html();
+		var price = parseFloat($(".sqs-money-native").html()) * 100;
 		var imgUrl = $("#productThumbnails img").first().attr("data-image");
 		$.ajax({
 			url: addToFavorites,
