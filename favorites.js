@@ -7,7 +7,7 @@ var measurements_url = "https://widget.trimirror.com/GetMeasurements?clientId=" 
 var video_url = "https://widget.trimirror.com/GetVideoUrl?clientId=" + clientId + "&code=#code#&color=#color#&size=#size#&width=640&height=480&extcode=#extCode#&extcolor=#extColor#&extsize=#extSize#";
 var video_urls = "https://widget.trimirror.com/GetVideoUrls";
 var video_progress = "https://widget.trimirror.com/GetVideoWithProgress";
-var measurements_link = "/pages/my-avatar";
+var measurements_link = "/my-avatar";
 
 $(function () {
 	function generateFavorites(data) {
@@ -259,6 +259,7 @@ $(function () {
 				slideshow: true,
 				animationSpeed: 1000
 			});
+			$(".flex-next, .flex-prev").html("");
 		});
 
 		// Remove and Look
