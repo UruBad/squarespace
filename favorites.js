@@ -109,7 +109,7 @@ $(function () {
 			    html += '<li><img style="display:none;" src=""/></li>';
 			}		    	
 
-			shareLink = shareLink.replace("#link#", encodeURIComponent(window.location.href)).replace("#items#", itemsNames.substring(0, itemsNames.length - 1)) + '&img=' + data.slides[0];
+			shareLink = "";//shareLink.replace("#link#", encodeURIComponent(window.location.href)).replace("#items#", itemsNames.substring(0, itemsNames.length - 1)) + '&img=' + data.slides[0];
 			html +=
 				'				</ul>' +
                 '     <div id="measurements_values">' +
