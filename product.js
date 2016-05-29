@@ -106,6 +106,7 @@ var select_size;
                 }
             }
         });
+        $(".flex-next, .flex-prev").html("");
     });
 
 function AddToFavorites(){
