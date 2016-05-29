@@ -46,7 +46,7 @@ $(function () {
 
 					'		<div class="overlay-wrapper">' +
 					'			<a href="#" class="mobile_dropdown_link">' +
-					'				<img src="' + item.image + '" alt="Shop item" style="max-width:97% !important;">' +
+					'				<img src="' + item.imgUrl + '" alt="Shop item" style="max-width:97% !important;">' +
 					'			</a>' +
 					'			<div class="favorite-overlay-contents">' +
 					'				<div class="shop-item-actions">' +
@@ -64,7 +64,7 @@ $(function () {
                     '           <span class="check_look"></span>' +
 					'		</div>' +
 					'		<header class="item-info-name-features-price">' +
-					'			<h4><a href="https://widget.trimirror.com/Product?name=' + item.name + '">' + item.title + " / " + item.size.toUpperCase() + '</a></h4>' +
+					'			<h4><a href="' + item.productUrl + '">' + item.title + " / " + item.size.toUpperCase() + '</a></h4>' +
 					/*'			<span class="features">' + item.colorTitle + ', ' + item.sizeTitle + '</span><br>' +*/
 					'			<span class="price">' + item.priceString + '</span>' +
 					'		</header>';
@@ -194,6 +194,7 @@ $(function () {
 		    		}
 		    	}
 		    }
+		    consolr.log(url);
 		    $.ajax({
 		        url: url,
 		        data: {},
