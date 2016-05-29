@@ -194,7 +194,7 @@ $(function () {
 		    		}
 		    	}
 		    }
-		    consolr.log(url);
+		    console.log(url);
 		    $.ajax({
 		        url: url,
 		        data: {},
