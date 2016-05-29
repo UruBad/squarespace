@@ -110,7 +110,7 @@ $(function () {
 			}		    	
 
 		    var shotUrl = "https://widget.trimirror.com/GetShot?clientId=" + clientId + "&code=#code#&color=#color#&size=#size#&extcode=#extcode#&extcolor=#extcolor#&extsize=#extsize#&width=430&height=585&view=1&userId=#userId#&jpg";
-		    shotUrl = url.replace("#userId#", GetUserId());
+		    shotUrl = shotUrl.replace("#userId#", GetUserId());
 		    var extItemShot = false
 		    for (var c = 0; c < data.items.length; c++) {
 		    	var itemLook = data.items[c];
