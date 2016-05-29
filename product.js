@@ -38,7 +38,8 @@ var select_size;
         trimirror_color = ""; //$("#color").val();
 	for (var i = 0; i < $("select[data-variant-option-name='Size'] option").length; i++) {
 		var size = $($("select[data-variant-option-name='Size'] option")[i]).val();
-		trimirror_sizes.push({ "Name": size, "Title": size });	
+		if(!!size && size.length > 0)
+			trimirror_sizes.push({ "Name": size, "Title": size });	
         }        
         /*$("#color").change(function () {
             trimirror_color = $("#color").val();
