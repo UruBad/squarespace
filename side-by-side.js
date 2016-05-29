@@ -42,6 +42,7 @@ $(function () {
 
 function UpdateSizes(current_size) {
     var sizeIndex = -1;
+    console.log(trimirror_sizes);
     for (var i = 0; i < trimirror_sizes.length; i++) {
         if (trimirror_sizes[i].Name == current_size) {
             sizeIndex = i;
