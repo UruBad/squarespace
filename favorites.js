@@ -184,18 +184,16 @@ $(function () {
 		    var extItem = false
 		    for (var c = 0; c < data.items.length; c++) {
 		    	var itemLook = data.items[c];
-		    	console.log(itemLook);
 		    	if(itemLook.look){
 		    		if(!extItem){
-		    			url.replace("#code#", itemLook.code).replace("#size#", itemLook.size).replace("#color#", itemLook.color);
+		    			url = url.replace("#code#", itemLook.code).replace("#size#", itemLook.size).replace("#color#", itemLook.color);
 		    			extItem = true;
 		    		} else {
-		    			url.replace("#extcode#", itemLook.code).replace("#extsize#", itemLook.size).replace("#extcolor#", itemLook.color);
+		    			url = url.replace("#extcode#", itemLook.code).replace("#extsize#", itemLook.size).replace("#extcolor#", itemLook.color);
 		    			break;
 		    		}
 		    	}
 		    }
-		    console.log(url);
 		    $.ajax({
 		        url: url,
 		        data: {},
