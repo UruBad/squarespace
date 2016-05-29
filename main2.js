@@ -968,8 +968,8 @@ function GenerateShoppingCartWidget(data) {
 }
 
 function UpdateFavorites(data) {
-	global_favoriteItems = data;
-	$("#fav-count").html(global_favoriteItems.items.length);
+	/*global_favoriteItems = data;
+	$("#fav-count").html(global_favoriteItems.items.length);*/
 }
 
 function getShoppingBagItems() {
