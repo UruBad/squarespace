@@ -37,6 +37,7 @@ $(function () {
         slideshowSpeed: 4000,
         directionNav: true
     });
+    $('.flex-next, .flex-prev').html('');
 });
 
 function UpdateSizes(current_size) {
