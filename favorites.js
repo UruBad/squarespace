@@ -105,7 +105,7 @@ $(function () {
 				'				<ul class="slides" id="dressing_slides">';
 
 
-			for (i = 0, i < 3; ++i) {
+			for (i = 0; i < 3; ++i) {
 			    html += '<li><img style="display:none;" src=""/></li>';
 			}		    	
 
