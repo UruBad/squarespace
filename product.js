@@ -10,6 +10,21 @@ var select_size;
     var addToFavorites = "https://widget.trimirror.com/AddFavorites?clientId=" + trimirror_clientId
     
     $(function () {
+    	$('<div id="measurements_values"><table><tr><td><span>my measurements:</span></td><td class="link"><a href="/my-avatar" class="touch_click">change</a></td></tr><tr><td style="padding-bottom:5px;"><span id="measurement_value"></span></td><td></td></tr></table></div>').insertAfter($(".slide.sqs-gallery-design-stacked-slide"));
+	var content = '<ul class="smallThumbnails">';
+	var counter = 1;
+                for (var i = 1; i <= 6; i++)
+                {
+                    content += '<li data-target="' + counter + '" style="' + (i == 1 ? "display:block" : "display:none") + "' class="' + (i == 1 ? "active" : "")"'>""
+                    content += '<a href="#" data-legend="true" class="smallThumbnailsImage">';
+                    content += '<img src="http://static1.squarespace.com/static/573ff47b2eeb81d00cc8aea3/t/574ae697b654f95fce42c5ca/1464526487696/Content_images_spin.gif" data-src="" alt=" ">
+                    content += '</a></li>';
+                    counter++;
+                }
+            }
+	content += '</ul>';
+	$(content).insertAfter($("#productThumbnails"));
+	updatePictures(true);
     	$('<div><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner" id="yui_3_17_2_3_1463297059130_2963">Add to Dressing Room</div></button></div>').insertAfter($(".sqs-add-to-cart-button-wrapper"));
     	$("#add-to-favorites").click(function(){
     		AddToFavorites();
