@@ -61,7 +61,7 @@ function UpdateSizes(current_size) {
         }
         else {
             $("#first_side .side-by-side-size").hide();
-            $("#first_side").attr("style", "z-index:1");
+            $("#first_side").attr("style", "");
             $("#first_side .side-by-side-content").show();
             $("#side_by_side_slider div.first img").show();
             $("#first_side .side-by-side-size span").html(trimirror_sizes[sizeIndex - 1].Title);
