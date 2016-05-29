@@ -10,7 +10,8 @@ var select_size;
     var addToFavorites = "https://widget.trimirror.com/AddFavorites?clientId=" + trimirror_clientId
     
     $(function () {
-    	$('<div id="measurements_values"><table><tr><td><span>my measurements:</span></td><td class="link"><a href="/my-avatar" class="touch_click">change</a></td></tr><tr><td style="padding-bottom:5px;"><span id="measurement_value"></span></td><td></td></tr></table></div>').insertAfter($(".slide.sqs-gallery-design-stacked-slide"));
+    	//$('<div id="measurements_values"><table><tr><td><span>my measurements:</span></td><td class="link"><a href="/my-avatar" class="touch_click">change</a></td></tr><tr><td style="padding-bottom:5px;"><span id="measurement_value"></span></td><td></td></tr></table></div>').insertAfter($(".slide.sqs-gallery-design-stacked-slide"));
+    	//$('<div class="legend" style="display:block"><span class="tight">too tight</span><span class="loose">loose</span></div>').insertAfter($(".slide.sqs-gallery-design-stacked-slide"));
 	var content = '<ul class="smallThumbnails">';
 	var counter = 1;
 	for (var i = 1; i <= 6; i++)
@@ -22,8 +23,7 @@ var select_size;
                 counter++;
 	}
 	content += '</ul>';
-	$(content).insertAfter($("#productThumbnails"));
-	updatePictures(true);
+	//$(content).insertAfter($("#productThumbnails"));
     	$('<div><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner" id="yui_3_17_2_3_1463297059130_2963">Add to Dressing Room</div></button></div>').insertAfter($(".sqs-add-to-cart-button-wrapper"));
     	$("#add-to-favorites").click(function(){
     		AddToFavorites();
@@ -195,7 +195,7 @@ function AddToFavorites(){
                 if (data.isSuccess) {
                     for (var i = 0; i < data.urls.length; i++) {
                         var urlImage = data.urls[i];
-                        $(".thumbnailSlider .smallThumbnails li:eq(" + (i + 1) + ") img:first").attr("src", urlImage);
+                        $(".smallThumbnails li:eq(" + (i + 1) + ") img:first").attr("src", urlImage);
                     }
                 }
             }
