@@ -55,8 +55,13 @@ function UpdateSizes(current_size) {
             $("#first_side .side-by-side-content").hide();
             $("#side_by_side_slider div.first img").hide();
             $("#first_side .side-by-side-loading").hide();
+            $("#first_side").attr("style", "z-index:1");
+            $("#first_side .side-by-side-size").hide();
+            
         }
         else {
+            $("#first_side .side-by-side-size").hide();
+            $("#first_side").attr("style", "z-index:1");
             $("#first_side .side-by-side-content").show();
             $("#side_by_side_slider div.first img").show();
             $("#first_side .side-by-side-size span").html(trimirror_sizes[sizeIndex - 1].Title);
@@ -71,8 +76,10 @@ function UpdateSizes(current_size) {
             $("#last_side .side-by-side-content").hide();
             $("#side_by_side_slider div.last img").hide();
             $("#last_side .side-by-side-loading").hide();
+            $("#last_side").attr("style", "z-index:1");
         }
         else {
+            $("#last_side").attr("style", "");
             $("#last_side .side-by-side-content").show();
             $("#side_by_side_slider div.last img").show();
             $("#last_side .side-by-side-size span").html(trimirror_sizes[sizeIndex + 1].Title);
