@@ -183,7 +183,7 @@ function AddToFavorites(){
                         $(".trimirror_slide[data-target='" + (i + 1) + "'] img:first").attr("src", urlImage);
                     }
                     $(".trimirror_slide").show();
-                      Y.trigger("domready");
+                      //Y.trigger("domready");
                 }
             }
         });
