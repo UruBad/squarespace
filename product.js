@@ -21,6 +21,7 @@ var select_size;
 	}
 	$("#productThumbnails").append(content);
 	$("#productThumbnails").append('<a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;"></a>');
+	$('.catwalk').click(openPopup);
 	//$(content).insertAfter();
     	$('<div><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner" id="yui_3_17_2_3_1463297059130_2963">Add to Dressing Room</div></button></div>').insertAfter($(".sqs-add-to-cart-button-wrapper"));
     	$("#add-to-favorites").click(function(){
