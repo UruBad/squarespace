@@ -153,7 +153,7 @@ function AddToFavorites(){
         var templateUrl = "https://widget.trimirror.com/GetShotUrls?clientId=" + clientId + "&code=" + product_code + "&color=#color#&size=#size#&width=#width#&height=#height#&userId=#userId#&jpg";
 	//373x585
         var currentUrl = templateUrl.replace("#color#", color).replace("#size#", size).replace("#userId#", GetUserId());
-        var url = currentUrl.replace("#width#", "650").replace("#height#", "845");
+        var url = currentUrl.replace("#width#", "534").replace("#height#", "711");
         $.ajax({
             url: url,
             data: {},
