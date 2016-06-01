@@ -162,8 +162,8 @@ function AddToFavorites(){
                 if (data.isSuccess) {
                     for (var i = 0; i < data.urls.length; i++) {
                         var urlImage = data.urls[i];
-                        $(".trimirror_slide:eq(" + (i + 1) + ") img:first").attr("data-src", urlImage);
-                        $(".trimirror_slide:eq(" + (i + 1) + ") img:first").attr("data-image", urlImage);
+                        $(".trimirror_slide[data-target='" + (i + 1) + "'] img:first").attr("data-src", urlImage);
+                        $(".trimirror_slide[data-target='" + (i + 1) + "'] img:first").attr("data-image", urlImage);
                     }
                     $(".timer_container .timer-loader").hide();
                     //$("#preloader").hide();
@@ -179,7 +179,7 @@ function AddToFavorites(){
                 if (data.isSuccess) {
                     for (var i = 0; i < data.urls.length; i++) {
                         var urlImage = data.urls[i];
-                        $(".trimirror_slide:eq(" + (i + 1) + ") img:first").attr("src", urlImage);
+                        $(".trimirror_slide[data-target='" + (i + 1) + "'] img:first").attr("src", urlImage);
                     }
                     $(".trimirror_slide").show();
                 }
