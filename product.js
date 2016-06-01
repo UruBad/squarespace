@@ -11,7 +11,7 @@ var select_size;
     
     $(function () {
   	$('<div id="measurements_values"><table><tr><td><span>my measurements:</span></td><td class="link"><a href="/my-avatar" class="touch_click">change</a></td></tr><tr><td style="padding-bottom:5px;"><span id="measurement_value"></span></td><td></td></tr></table></div>').insertAfter($("#productSlideshow .slide>div"));
-    	$('<div class="legend" style="display:none"><span class="tight">too tight</span><span class="loose">loose</span></div>').insertAfter($("#productSlideshow .slide>div").first());
+    	$('<div class="legend"><span class="tight">too tight</span><span class="loose">loose</span></div>').insertAfter($("#productSlideshow .slide>div").first());
 	var content = '<ul class="smallThumbnails">';
 	var counter = 1;
 	for (var i = 1; i <= 6; i++)
@@ -102,7 +102,7 @@ var select_size;
                         }
                     }
                     $("#measurements_values #measurement_value").html(result.substring(0, result.length - 1));
-                    $("#measurements_values").show();
+                    //$("#measurements_values").show();
                 }
             }
         });
