@@ -102,7 +102,7 @@
                     data: {},
                     method: "POST",
                     success: function (data) {
-                        console.dir(data);
+                        console.log(data);
                         if (data.isSuccess) {
                             for (var i = 0; i < data.measurements.length; i++) {
                                 var group = data.measurements[i];
