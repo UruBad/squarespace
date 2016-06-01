@@ -12,18 +12,14 @@ var select_size;
     $(function () {
   	$('<div id="measurements_values"><table><tr><td><span>my measurements:</span></td><td class="link"><a href="/my-avatar" class="touch_click">change</a></td></tr><tr><td style="padding-bottom:5px;"><span id="measurement_value"></span></td><td></td></tr></table></div>').insertAfter($("#productSlideshow .slide>div"));
     	$('<div class="legend"><span class="tight">too tight</span><span class="loose">loose</span></div>').insertAfter($("#productSlideshow .slide>div").first());
-	var content = '<ul class="smallThumbnails">';
+	var content = '';
 	var counter = 1;
 	for (var i = 1; i <= 6; i++)
         {
-        	content += '<li data-target="' + counter + '" style="' + (i == 1 ? "display:block" : "display:none") + '" class="' + (i == 1 ? "active" : "") + '">';                    
-                content += '<a href="#" data-legend="true" class="smallThumbnailsImage">';
-                content += '<img src="http://static1.squarespace.com/static/573ff47b2eeb81d00cc8aea3/t/574ae697b654f95fce42c5ca/1464526487696/Content_images_spin.gif" data-src="" alt=" ">';
-                content += '</a></li>';
+        	content += '<div class="slide trimirror_slide" data-target="' + counter + '"><img src="" data-load="false" data-src="" data-image="" data-image-dimensions="373x585" data-image-focal-point="0.5,0.5" alt=""><div class=""></div></div>';
                 counter++;
 	}
-	content += '</ul>';
-	//$(content).insertAfter($("#productThumbnails"));
+	$(content).insertAfter($("#productThumbnails"));
     	$('<div><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner" id="yui_3_17_2_3_1463297059130_2963">Add to Dressing Room</div></button></div>').insertAfter($(".sqs-add-to-cart-button-wrapper"));
     	$("#add-to-favorites").click(function(){
     		AddToFavorites();
@@ -148,13 +144,13 @@ function AddToFavorites(){
     function updatePictures(addTime) {
         $(".timer_container .timer-loader").show();
         addTime = typeof addTime !== 'undefined' ? addTime : false;
-        $("#preloader").show();
+        //$("#preloader").show();
         var color = "";
         var size = $("select[data-variant-option-name='Size']").val();
 
         // Avatar pictures
         var templateUrl = "https://widget.trimirror.com/GetShotUrls?clientId=" + clientId + "&code=" + product_code + "&color=#color#&size=#size#&width=#width#&height=#height#&userId=#userId#&jpg";
-
+	//373x585
         var currentUrl = templateUrl.replace("#color#", color).replace("#size#", size).replace("#userId#", GetUserId());
         var url = currentUrl.replace("#width#", "650").replace("#height#", "845");
         $.ajax({
@@ -165,14 +161,15 @@ function AddToFavorites(){
                 if (data.isSuccess) {
                     for (var i = 0; i < data.urls.length; i++) {
                         var urlImage = data.urls[i];
-                        $(".thumbnailSlider .slides li:eq(" + (i + 1) + ") a:first").attr("href", urlImage);
+                        $(".trimirror_slide:eq(" + (i + 1) + ") img:first").attr("data-src", urlImage);
+                        $(".trimirror_slide:eq(" + (i + 1) + ") img:first").attr("data-image", urlImage);
                     }
                     $(".timer_container .timer-loader").hide();
-                    $("#preloader").hide();
+                    //$("#preloader").hide();
                 }
             }
         });
-        url = currentUrl.replace("#width#", "430").replace("#height#", "585");
+        url = currentUrl.replace("#width#", "100").replace("#height#", "120");
         $.ajax({
             url: url,
             data: {},
@@ -181,23 +178,9 @@ function AddToFavorites(){
                 if (data.isSuccess) {
                     for (var i = 0; i < data.urls.length; i++) {
                         var urlImage = data.urls[i];
-                        $(".thumbnailSlider .slides li:eq(" + (i + 1) + ") img:first").attr("src", urlImage);
-                        $(".tension_map[data-tension-id='" + (i + 1) + "'] img").attr("src", urlImage);
+                        $(".trimirror_slide li:eq(" + (i + 1) + ") img:first").attr("src", urlImage);
                     }
-                }
-            }
-        });
-        url = currentUrl.replace("#width#", "60").replace("#height#", "75");
-        $.ajax({
-            url: url,
-            data: {},
-            dataType: "jsonp",
-            success: function (data) {
-                if (data.isSuccess) {
-                    for (var i = 0; i < data.urls.length; i++) {
-                        var urlImage = data.urls[i];
-                        $(".smallThumbnails li:eq(" + (i + 1) + ") img:first").attr("src", urlImage);
-                    }
+                    $(".trimirror_slide").show();
                 }
             }
         });
