@@ -170,7 +170,7 @@ function AddToFavorites(){
                 }
             }
         });
-        url = currentUrl.replace("#width#", "100").replace("#height#", "120");
+        url = currentUrl.replace("#width#", "50").replace("#height#", "79");
         $.ajax({
             url: url,
             data: {},
