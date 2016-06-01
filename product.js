@@ -182,28 +182,7 @@ function AddToFavorites(){
                         $(".trimirror_slide[data-target='" + (i + 1) + "'] img:first").attr("src", urlImage);
                     }
                     $(".trimirror_slide").show();
-                        var galleryAutoCrop = 'fill';
-      			if(Y.Squarespace.Template.getTweakValue('product-gallery-auto-crop') == "false") {
-        			galleryAutoCrop = 'fit'
-      			}
-                    Y.one('#productThumbnails').remove();
-                          var productSlideshow = new Y.Squarespace.Gallery2({
-        			container: Y.one('#productSlideshow'),
-        			elements: {
-          				next: '.next-slide',
-          				previous: '.prev-slide',
-          				controls: '#productThumbnails'
-        			},
-        			loop: true,
-        			design: 'stacked',
-        			designOptions: {
-          			autoHeight: false,
-          				clickBehavior: false
-        			},
-        			loaderOptions: {
-          				mode: galleryAutoCrop
-        			}
-      			});
+                      Y.trigger("domready");
                 }
             }
         });
