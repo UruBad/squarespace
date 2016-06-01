@@ -102,7 +102,7 @@ var select_size;
                         }
                     }
                     $("#measurements_values #measurement_value").html(result.substring(0, result.length - 1));
-                    //$("#measurements_values").show();
+                    $("#measurements_values").show();
                 }
             }
         });
