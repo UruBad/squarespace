@@ -10,8 +10,8 @@ var select_size;
     var addToFavorites = "https://widget.trimirror.com/AddFavorites?clientId=" + trimirror_clientId
     
     $(function () {
-    	//$('<div id="measurements_values"><table><tr><td><span>my measurements:</span></td><td class="link"><a href="/my-avatar" class="touch_click">change</a></td></tr><tr><td style="padding-bottom:5px;"><span id="measurement_value"></span></td><td></td></tr></table></div>').insertAfter($(".slide.sqs-gallery-design-stacked-slide"));
-    	$('<div class="legend" style="display:none"><span class="tight">too tight</span><span class="loose">loose</span></div>').insertAfter($(".slide.sqs-gallery-design-stacked-slide"));
+  	$('<div id="measurements_values"><table><tr><td><span>my measurements:</span></td><td class="link"><a href="/my-avatar" class="touch_click">change</a></td></tr><tr><td style="padding-bottom:5px;"><span id="measurement_value"></span></td><td></td></tr></table></div>').insertAfter($("#productSlideshow .slide"));
+    	$('<div class="legend" style="display:none"><span class="tight">too tight</span><span class="loose">loose</span></div>').insertAfter($("#productSlideshow .slide"));
 	var content = '<ul class="smallThumbnails">';
 	var counter = 1;
 	for (var i = 1; i <= 6; i++)
