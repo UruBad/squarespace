@@ -19,7 +19,8 @@ var select_size;
         	content += '<div class="slide trimirror_slide" data-target="' + counter + '"><img src="" data-load="false" data-src="" data-image="" data-image-dimensions="373x585" data-image-focal-point="0.5,0.5" alt=""><div class=""></div></div>';
                 counter++;
 	}
-	$(content).insertAfter($("#productThumbnails"));
+	$("#productThumbnails").appendTo(content);
+	//$(content).insertAfter();
     	$('<div><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner" id="yui_3_17_2_3_1463297059130_2963">Add to Dressing Room</div></button></div>').insertAfter($(".sqs-add-to-cart-button-wrapper"));
     	$("#add-to-favorites").click(function(){
     		AddToFavorites();
