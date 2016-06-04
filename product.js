@@ -111,7 +111,7 @@ var select_size;
         		$(".legend").hide();
         	}
         	
-        })
+        });
 
 
         // Hide preloader when everything is loaded
