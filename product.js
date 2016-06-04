@@ -52,11 +52,11 @@ var select_size;
 	var counter = 1;
 	for (var i = 1; i <= 6; i++)
         {
-        	content += '<div class="slide trimirror_slide" data-target="' + counter + '"><img src="http://static1.squarespace.com/static/573ff47b2eeb81d00cc8aea3/t/574e759ab6aa6043148aa31a/1464759706766/spin.gif" data-load="false" data-src="http://static1.squarespace.com/static/573ff47b2eeb81d00cc8aea3/t/574e759ab6aa6043148aa31a/1464759706766/spin.gif" data-image="http://static1.squarespace.com/static/573ff47b2eeb81d00cc8aea3/t/574e759ab6aa6043148aa31a/1464759706766/spin.gif" data-image-dimensions="373x585" data-image-focal-point="0.5,0.5" alt=""><div class=""></div></div>';
+        	content += '<div class="slide trimirror_slide click_event content-fill" data-target="' + counter + '"><img src="http://static1.squarespace.com/static/573ff47b2eeb81d00cc8aea3/t/574e759ab6aa6043148aa31a/1464759706766/spin.gif" data-load="false" data-src="http://static1.squarespace.com/static/573ff47b2eeb81d00cc8aea3/t/574e759ab6aa6043148aa31a/1464759706766/spin.gif" data-image="http://static1.squarespace.com/static/573ff47b2eeb81d00cc8aea3/t/574e759ab6aa6043148aa31a/1464759706766/spin.gif" data-image-dimensions="373x585" data-image-focal-point="0.5,0.5" alt=""><div class=""></div></div>';
                 counter++;
 	}
 	$("#productThumbnails").append(content);
-	$("#productThumbnails").append('<div class="slide trimirror_slide"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>');
+	$("#productThumbnails").append('<div class="slide trimirror_slide video_view"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>');
 	//$(content).insertAfter();
     	$('<div><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner" id="yui_3_17_2_3_1463297059130_2963">Add to Dressing Room</div></button></div>').insertAfter($(".sqs-add-to-cart-button-wrapper"));
     	$("#add-to-favorites").click(function(){
@@ -102,6 +102,16 @@ var select_size;
             $("#preloader").hide();
             $(".smallThumbnails li[data-target='1']").click();
         }
+        
+        $(".slide.content-fill").click(fucntion(){
+        	if($(this).hasCalss("click_event")){
+        		$(".legend").show();
+        		$(".slide.sqs-active-slide img").attr("src", $(this).find("img").first().attr("data-src"));
+        	} else if(!$(this).hasCalss("video_view")){
+        		$(".legend").hide();
+        	}
+        	
+        })
 
 
         // Hide preloader when everything is loaded
