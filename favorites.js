@@ -36,11 +36,11 @@ $(function () {
 					'	<article class="shop-item shop-item-wishlist overlay-element">';
 			    if (item.look) {
 			        html += '<div class="overlay-parent mobile_dropdown active_look" data-hover=".overlay-contents" data-link="' + item.productUrl + '">';
-			        actionName = "UnLookFavoritesAjax";
+			        actionName = "UnLookFavorites";
 			    }
 			    else {
 			        html += '<div class="overlay-parent mobile_dropdown" data-hover=".overlay-contents" data-link="' + item.productUrl + '">';
-			        actionName = "LookFavoritesAjax";
+			        actionName = "LookFavorites";
 			    }
 			    html +=
 
