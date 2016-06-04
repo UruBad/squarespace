@@ -23,7 +23,7 @@ var select_size;
                 counter++;
 	}
 	$("#productThumbnails").append(content);
-	$("#productThumbnails").append('<div class="slide"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>');
+	$("#productThumbnails").append('<div class="slide trimirror_slide"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>');
 	//$(content).insertAfter();
     	$('<div><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner" id="yui_3_17_2_3_1463297059130_2963">Add to Dressing Room</div></button></div>').insertAfter($(".sqs-add-to-cart-button-wrapper"));
     	$("#add-to-favorites").click(function(){
@@ -34,6 +34,23 @@ var select_size;
     	var link = window.location.href.split('/');
     	var name = link[link.length - 1];
         trimirror_code = name.split('?')[0];
+        
+        var data = {Data: []};
+        data.Data.push({
+        	code: trimirror_code,
+        	color: "",
+        	size: $("select[data-variant-option-name='Size']").val()
+        });
+        $.ajax({
+            url: ("https://widget.trimirror.com/CheckItems?clientId=" + trimirror_clientId,
+            dataType: "jsonp",
+            data: JSON.stringify(data),
+            method: "POST",
+            success: function (data) {
+                console.log(data);
+            }
+        });         
+        
         product_code = trimirror_code;
         shotUrls = shotUrls.replace("#code#", trimirror_code);
         trimirror_name = $("h1.product-title").html();
