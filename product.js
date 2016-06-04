@@ -30,6 +30,7 @@ var select_size;
             	if(result.data[0].available){
                 	UpdatePage();
                 	UpdateSideBySide();
+                	YoutubeShare();
             	}
             	else {
             		$("select[data-variant-option-name='Size']").chosen({disable_search: true});
