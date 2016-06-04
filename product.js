@@ -34,7 +34,6 @@ var select_size;
     	var link = window.location.href.split('/');
     	var name = link[link.length - 1];
         trimirror_code = name.split('?')[0];
-        alert(trimirror_code);
         product_code = trimirror_code;
         shotUrls = shotUrls.replace("#code#", trimirror_code);
         trimirror_name = $("h1.product-title").html();
