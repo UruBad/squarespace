@@ -26,10 +26,11 @@ var select_size;
             dataType: "jsonp",
             data: {data: JSON.stringify(data)},
             method: "POST",
-            success: function (data) {
-            	console.log(data);
+            success: function (result) {
+            	console.log(result);
+            	$("select[data-variant-option-name='Size']").chosen({disable_search: true});
             	return false;
-            	if(data[0].available){
+            	if(result.data[0].available){
                 	UpdatePage();
                 	UpdateSideBySide();
             	}
