@@ -41,11 +41,10 @@ var select_size;
         	color: "",
         	size: $("select[data-variant-option-name='Size']").val()
         });
-        console.log(JSON.stringify(data));
         $.ajax({
-            url: ("https://widget.trimirror.com/CheckItems?clientId=" + trimirror_clientId,
+            url: ("https://widget.trimirror.com/CheckItems?clientId=" + trimirror_clientId),
             dataType: "jsonp",
-            data: data,
+            data: JSON.stringify(data),
             method: "POST",
             success: function (data) {
                 console.log(data);
