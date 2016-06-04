@@ -51,12 +51,12 @@ $(function () {
 					'			<div class="favorite-overlay-contents">' +
 					'				<div class="shop-item-actions">' +
                     '                   <div class="look_button" style="display:none;">' +
-                    '                       <a class="action_button" data-url="https://widget.trimirror.com/' + actionName + '?code=' + item.code + '&color=' + item.color + '&size=' + item.size + '" data-action="unlook" href="#">' +
+                    '                       <a class="action_button" data-url="https://widget.trimirror.com/' + actionName + '?clientId=' + clientId + '&code=' + item.code + '&color=' + item.color + '&size=' + item.size + '" data-action="unlook" href="#">' +
                     '                           <span>+</span>LOOK' +
                     '                       </a>' +
                     '                   </div>' +
                     '                   <div class="bottom_buttons">' +
-                    '                       <a class="action_button" data-url="https://widget.trimirror.com/DeleteFavorites?code=' + item.code + '&color=' + item.color + '&size=' + item.size + '" data-action="remove" href="#">REMOVE</a>' +
+                    '                       <a class="action_button" data-url="https://widget.trimirror.com/DeleteFavorites?clientId=' + clientId + '&code=' + item.code + '&color=' + item.color + '&size=' + item.size + '" data-action="remove" href="#">REMOVE</a>' +
                     '                   </div>' +
 					'				</div>' +
 					'			</div>' +
