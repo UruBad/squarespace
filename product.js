@@ -10,12 +10,7 @@ var select_size;
     var addToFavorites = "https://widget.trimirror.com/AddFavorites?clientId=" + trimirror_clientId
     
     $(function () {
-    	$("#productSummary").append('<div id="side-by-side" class="side-by-side-container"><div class="side-by-side"><div style="height:100% !important" class="image_container" id="first_side" style="z-index:1"><div class="side-by-side-loading"><div class="timer-loader"></div></div><div class="side-by-side-content"><div class="side-by-side-size"><span>M</span></div></div></div><div style="height:100% !important" class="image_container" id="second_side"><div class="side-by-side-loading"><div class="timer-loader"></div></div><div class="side-by-side-content"><div class="side-by-side-size active"><span>M</span></div></div></div><div style="height:100% !important" class="image_container" id="last_side" style="z-index:1"><div class="side-by-side-loading"><div class="timer-loader"></div></div><div class="side-by-side-content"><div class="side-by-side-size"><span>M</span></div></div></div><div id="side_by_side_slider" class="flexslider flexslider-nopager"><ul class="slides"><li class="first_li flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; display: list-item;"><div class="first">&nbsp;<img class="big" src=""></div><div class="second"><img class="big" src=""><a class="side-by-side-map" href="#"><img class="tension" src=""></a></div><div class="last"><img class="big" src=""></div></li><li class="second_li" style="width: 100%; float: left; margin-right: -100%; position: relative;"><div class="first">&nbsp;<img class="big" src=""></div><div class="second"><img class="big" src=""><a class="side-by-side-map" href="#"><img class="tension" src=""></a></div><div class="last"><img class="big" src=""></div></li><li class="last_li" style="width: 100%; float: left; margin-right: -100%; position: relative;"><div class="first">&nbsp;<img class="big" src=""></div><div class="second"><img class="big" src=""><a class="side-by-side-map" href="#"><img class="tension" src=""></a></div><div class="last"><img class="big" src=""></div></li></ul><ul class="flex-direction-nav"><li><a href="#" class="flex-prev">Previous</a></li><li><a href="#" class="flex-next">Next</a></li></ul></div><a href="#" id="side-by-side-close" class="side-by-side-close"></a><div style="right:1% !important;left:auto !important;bottom:0 !important;line-height:21px;" class="trimirror_logo"><a class="touch_click" href="http://trimirror.com" target="_blank"><div><span>powered by</span><span>tri</span><span>Mirror</span></div></a></div></div></div>');
-    	$("#productSummary").append('<div id="catwalk-wrapper" class="mfp-hide"><div id="catwalk-preloader"></div><video id="video1" width="640" height="480" autobuffer preload="auto" controls style="display:none;"><source type="video/mp4">Your browser does not support the HTML5 video.</video><video id="video2" width="640" height="480" autobuffer preload="auto" controls style="display:none;"><source type="video/mp4">Your browser does not support the HTML5 video.</video></div>');
-        $("select[data-variant-option-name='Size']").chosen({disable_search: true}).change(function () { updatePictures(); });
-        $(".chosen-results li").first().hide();
-    	$(".chosen-container").hide();
-    	$("select[data-variant-option-name='Size']").show();
+
     	var link = window.location.href.split('/');
     	var name = link[link.length - 1];
         trimirror_code = name.split('?')[0];
@@ -32,9 +27,15 @@ var select_size;
             data: {data: JSON.stringify(data)},
             method: "POST",
             success: function (data) {
-            	if(data[0].available)
+            	console.log(data);
+            	return false;
+            	if(data[0].available){
                 	UpdatePage();
                 	UpdateSideBySide();
+            	}
+            	else {
+            		$("select[data-variant-option-name='Size']").chosen({disable_search: true});
+            	}
             }
         });         
                 
@@ -43,6 +44,8 @@ var select_size;
     
     
     function UpdatePage() {
+    	$("#productSummary").append('<div id="side-by-side" class="side-by-side-container"><div class="side-by-side"><div style="height:100% !important" class="image_container" id="first_side" style="z-index:1"><div class="side-by-side-loading"><div class="timer-loader"></div></div><div class="side-by-side-content"><div class="side-by-side-size"><span>M</span></div></div></div><div style="height:100% !important" class="image_container" id="second_side"><div class="side-by-side-loading"><div class="timer-loader"></div></div><div class="side-by-side-content"><div class="side-by-side-size active"><span>M</span></div></div></div><div style="height:100% !important" class="image_container" id="last_side" style="z-index:1"><div class="side-by-side-loading"><div class="timer-loader"></div></div><div class="side-by-side-content"><div class="side-by-side-size"><span>M</span></div></div></div><div id="side_by_side_slider" class="flexslider flexslider-nopager"><ul class="slides"><li class="first_li flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; display: list-item;"><div class="first">&nbsp;<img class="big" src=""></div><div class="second"><img class="big" src=""><a class="side-by-side-map" href="#"><img class="tension" src=""></a></div><div class="last"><img class="big" src=""></div></li><li class="second_li" style="width: 100%; float: left; margin-right: -100%; position: relative;"><div class="first">&nbsp;<img class="big" src=""></div><div class="second"><img class="big" src=""><a class="side-by-side-map" href="#"><img class="tension" src=""></a></div><div class="last"><img class="big" src=""></div></li><li class="last_li" style="width: 100%; float: left; margin-right: -100%; position: relative;"><div class="first">&nbsp;<img class="big" src=""></div><div class="second"><img class="big" src=""><a class="side-by-side-map" href="#"><img class="tension" src=""></a></div><div class="last"><img class="big" src=""></div></li></ul><ul class="flex-direction-nav"><li><a href="#" class="flex-prev">Previous</a></li><li><a href="#" class="flex-next">Next</a></li></ul></div><a href="#" id="side-by-side-close" class="side-by-side-close"></a><div style="right:1% !important;left:auto !important;bottom:0 !important;line-height:21px;" class="trimirror_logo"><a class="touch_click" href="http://trimirror.com" target="_blank"><div><span>powered by</span><span>tri</span><span>Mirror</span></div></a></div></div></div>');
+    	$("#productSummary").append('<div id="catwalk-wrapper" class="mfp-hide"><div id="catwalk-preloader"></div><video id="video1" width="640" height="480" autobuffer preload="auto" controls style="display:none;"><source type="video/mp4">Your browser does not support the HTML5 video.</video><video id="video2" width="640" height="480" autobuffer preload="auto" controls style="display:none;"><source type="video/mp4">Your browser does not support the HTML5 video.</video></div>');
   	$('<div id="measurements_values"><table><tr><td><span>my measurements:</span></td><td class="link"><a href="/my-avatar" class="touch_click">change</a></td></tr><tr><td style="padding-bottom:5px;"><span id="measurement_value"></span></td><td></td></tr></table></div>').insertAfter($("#productSlideshow .slide>div"));
     	$('<div class="legend"><span class="tight">too tight</span><span class="loose">loose</span></div>').insertAfter($("#productSlideshow .slide>div").first());
     	$('<div class="timer_container"><div class="timer-loader" style="display:none;"></div></div>').insertAfter($("#productSlideshow .slide>div").first());
@@ -61,6 +64,7 @@ var select_size;
     		AddToFavorites();
     	});
 
+    	$("select[data-variant-option-name='Size']").show();    
         product_code = trimirror_code;
         shotUrls = shotUrls.replace("#code#", trimirror_code);
         trimirror_name = $("h1.product-title").html();
@@ -78,6 +82,9 @@ var select_size;
             trimirror_size = $("select[data-variant-option-name='Size']").val();
         });
         // Update pictures if color or size are changed
+        $("select[data-variant-option-name='Size']").chosen({disable_search: true}).change(function () { updatePictures(); });
+        $(".chosen-results li").first().hide();
+    	$(".chosen-container").hide();        
         //$("#color").chosen().change(function () { updatePictures(); });
 
         // Hide preloader after image load
