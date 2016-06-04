@@ -1,4 +1,4 @@
-var clientId = "16b58be2625f489a82bed854635fb8b5";
+var clientId = "39a67ffb5c1349368b45b67daa75622f";
 var setMeasurements = "https://widget.trimirror.com/SetMeasurements?clientId=" + clientId + "&userId=#userId#";
 var setCharacter = "https://widget.trimirror.com/SetCharacter?clientId=" + clientId + "&userId=#userId#&character=#character#";
 var checkMeasurementsUrl = "https://widget.trimirror.com/CheckMeasurements?clientId=" + clientId + "&userId=#userId#";
