@@ -128,7 +128,7 @@ var select_size;
     });
 
 function AddToFavorites(){
-		var code = $("#trimirror_product_code").val();
+		var code = trimirror_code;
 		var color = "";
 		var size = $("select[data-variant-option-name='Size']").val();
 		var title = $("#productDetails h1").html();
