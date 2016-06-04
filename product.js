@@ -103,7 +103,7 @@ var select_size;
             $(".smallThumbnails li[data-target='1']").click();
         }
         
-        $(".slide.content-fill").click(fucntion(){
+        $(".slide.content-fill").click(function(){
         	if($(this).hasCalss("click_event")){
         		$(".legend").show();
         		$(".slide.sqs-active-slide img").attr("src", $(this).find("img").first().attr("data-src"));
