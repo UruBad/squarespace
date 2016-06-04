@@ -27,9 +27,6 @@ var select_size;
             data: {data: JSON.stringify(data)},
             method: "POST",
             success: function (result) {
-            	console.log(result);
-            	$("select[data-variant-option-name='Size']").chosen({disable_search: true});
-            	return false;
             	if(result.data[0].available){
                 	UpdatePage();
                 	UpdateSideBySide();
