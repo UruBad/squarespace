@@ -82,7 +82,7 @@ var select_size;
         // Update pictures if color or size are changed
         $("select[data-variant-option-name='Size']").chosen({disable_search: true}).change(function () { updatePictures(); });
         $(".chosen-results li").first().hide();
-    	$(".chosen-container").hide();        
+ 
         //$("#color").chosen().change(function () { updatePictures(); });
 
         // Hide preloader after image load
