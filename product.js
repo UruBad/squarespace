@@ -44,7 +44,7 @@ var select_size;
         $.ajax({
             url: ("https://widget.trimirror.com/CheckItems?clientId=" + trimirror_clientId),
             dataType: "jsonp",
-            data: JSON.stringify(data),
+            data: {data: data},
             method: "POST",
             success: function (data) {
                 console.log(data);
