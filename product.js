@@ -106,11 +106,9 @@ var select_size;
         $(".slide.content-fill").click(function(){
         	if($(this).hasClass("click_event")){
         		$(".legend").show();
-        		$(".slide.sqs-active-slide img").attr("src", $(this).find("img").first().attr("data-src"));
         	} else if(!$(this).hasClass("video_view")){
         		$(".legend").hide();
         	}
-        	
         });
 
 
