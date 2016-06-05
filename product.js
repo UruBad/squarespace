@@ -45,18 +45,22 @@ var select_size;
     function UpdatePage() {
     	$("#productSummary").append('<div id="side-by-side" class="side-by-side-container"><div class="side-by-side"><div style="height:100% !important" class="image_container" id="first_side" style="z-index:1"><div class="side-by-side-loading"><div class="timer-loader"></div></div><div class="side-by-side-content"><div class="side-by-side-size"><span>M</span></div></div></div><div style="height:100% !important" class="image_container" id="second_side"><div class="side-by-side-loading"><div class="timer-loader"></div></div><div class="side-by-side-content"><div class="side-by-side-size active"><span>M</span></div></div></div><div style="height:100% !important" class="image_container" id="last_side" style="z-index:1"><div class="side-by-side-loading"><div class="timer-loader"></div></div><div class="side-by-side-content"><div class="side-by-side-size"><span>M</span></div></div></div><div id="side_by_side_slider" class="flexslider flexslider-nopager"><ul class="slides"><li class="first_li flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; display: list-item;"><div class="first">&nbsp;<img class="big" src=""></div><div class="second"><img class="big" src=""><a class="side-by-side-map" href="#"><img class="tension" src=""></a></div><div class="last"><img class="big" src=""></div></li><li class="second_li" style="width: 100%; float: left; margin-right: -100%; position: relative;"><div class="first">&nbsp;<img class="big" src=""></div><div class="second"><img class="big" src=""><a class="side-by-side-map" href="#"><img class="tension" src=""></a></div><div class="last"><img class="big" src=""></div></li><li class="last_li" style="width: 100%; float: left; margin-right: -100%; position: relative;"><div class="first">&nbsp;<img class="big" src=""></div><div class="second"><img class="big" src=""><a class="side-by-side-map" href="#"><img class="tension" src=""></a></div><div class="last"><img class="big" src=""></div></li></ul><ul class="flex-direction-nav"><li><a href="#" class="flex-prev">Previous</a></li><li><a href="#" class="flex-next">Next</a></li></ul></div><a href="#" id="side-by-side-close" class="side-by-side-close"></a><div style="right:1% !important;left:auto !important;bottom:0 !important;line-height:21px;" class="trimirror_logo"><a class="touch_click" href="http://trimirror.com" target="_blank"><div><span>powered by</span><span>tri</span><span>Mirror</span></div></a></div></div></div>');
     	$("#productSummary").append('<div id="catwalk-wrapper" class="mfp-hide"><div id="catwalk-preloader"></div><video id="video1" width="640" height="480" autobuffer preload="auto" controls style="display:none;"><source type="video/mp4">Your browser does not support the HTML5 video.</video><video id="video2" width="640" height="480" autobuffer preload="auto" controls style="display:none;"><source type="video/mp4">Your browser does not support the HTML5 video.</video></div>');
-  	$('<div id="measurements_values"><table><tr><td><span>my measurements:</span></td><td class="link"><a href="/my-avatar" class="touch_click">change</a></td></tr><tr><td style="padding-bottom:5px;"><span id="measurement_value"></span></td><td></td></tr></table></div>').insertAfter($("#productSlideshow .slide>div"));
-    	$('<div class="legend"><span class="tight">too tight</span><span class="loose">loose</span></div>').insertAfter($("#productSlideshow .slide>div").first());
-    	$('<div class="timer_container"><div class="timer-loader" style="display:none;"></div></div>').insertAfter($("#productSlideshow .slide>div").first());
+    	
 	var content = '';
+	var contentBig = '';
 	var counter = 1;
 	for (var i = 1; i <= 6; i++)
         {
-        	content += '<div class="slide trimirror_slide click_event content-fill" data-target="' + counter + '"><img src="http://static1.squarespace.com/static/573ff47b2eeb81d00cc8aea3/t/574e759ab6aa6043148aa31a/1464759706766/spin.gif" data-load="false" data-src="http://static1.squarespace.com/static/573ff47b2eeb81d00cc8aea3/t/574e759ab6aa6043148aa31a/1464759706766/spin.gif" data-image="http://static1.squarespace.com/static/573ff47b2eeb81d00cc8aea3/t/574e759ab6aa6043148aa31a/1464759706766/spin.gif" data-image-dimensions="373x585" data-image-focal-point="0.5,0.5" alt=""><div class=""></div></div>';
+        	content += '<div class="slide trimirror_slide click_event content-fill" data-target="' + counter + '"><img src="http://static1.squarespace.com/static/573ff47b2eeb81d00cc8aea3/t/574e759ab6aa6043148aa31a/1464759706766/spin.gif" data-load="false" data-src="" data-image="" data-image-dimensions="373x585" data-image-focal-point="0.5,0.5" alt=""><div class=""></div></div>';
+        	contentBig += '<div class="slide trimiror_big_slide" data-target="' + counter + '"><img data-load="false" data-src="" data-image="" data-image-dimensions="500x910" data-image-focal-point="0.5,0.5" alt=""><div class=""></div></div>';
                 counter++;
 	}
 	$("#productThumbnails").append(content);
 	$("#productThumbnails").append('<div class="slide trimirror_slide video_view"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>');
+	$("#productSlideshow").append(contentBig);
+  	$("#productSlideshow").append('<div id="measurements_values"><table><tr><td><span>my measurements:</span></td><td class="link"><a href="/my-avatar" class="touch_click">change</a></td></tr><tr><td style="padding-bottom:5px;"><span id="measurement_value"></span></td><td></td></tr></table></div>');
+    	$("#productSlideshow").append('<div class="legend"><span class="tight">too tight</span><span class="loose">loose</span></div>');
+    	$("#productSlideshow").append('<div class="timer_container"><div class="timer-loader" style="display:none;"></div></div>');
 	//$(content).insertAfter();
     	$('<div><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner" id="yui_3_17_2_3_1463297059130_2963">Add to Dressing Room</div></button></div>').insertAfter($(".sqs-add-to-cart-button-wrapper"));
     	$("#add-to-favorites").click(function(){
@@ -209,6 +213,9 @@ function AddToFavorites(){
                         var urlImage = data.urls[i];
                         $(".trimirror_slide[data-target='" + (i + 1) + "'] img:first").attr("data-src", urlImage);
                         $(".trimirror_slide[data-target='" + (i + 1) + "'] img:first").attr("data-image", urlImage);
+                        $(".trimiror_big_slide[data-target='" + (i + 1) + "'] img:first").attr("data-src", urlImage);
+                        $(".trimiror_big_slide[data-target='" + (i + 1) + "'] img:first").attr("data-image", urlImage);
+                        $(".trimiror_big_slide[data-target='" + (i + 1) + "'] img:first").attr("src", urlImage);
                     }
                     $(".timer_container .timer-loader").hide();
                     //$("#preloader").hide();
