@@ -58,6 +58,7 @@ var select_size;
 	$("#productThumbnails").append(content);
 	$("#productThumbnails").append('<div class="slide trimirror_slide video_view"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>');
 	$("#productSlideshow").append(contentBig);
+	$("#productSlideshow").append('<div style="right:1% !important;left:auto !important;bottom:0 !important;line-height:21px;" class="trimirror_logo"><a class="touch_click" href="http://trimirror.com" target="_blank"><div><span>powered by</span><span>tri</span><span>Mirror</span></div></a></div>');
   	$("#productSlideshow").parent().append('<div id="measurements_values"><table><tr><td><span>my measurements:</span></td><td class="link"><a href="/my-avatar" class="touch_click">change</a></td></tr><tr><td style="padding-bottom:5px;"><span id="measurement_value"></span></td><td></td></tr></table></div>');
     	$("#productSlideshow").parent().append('<div class="legend"><span class="tight">too tight</span><span class="loose">loose</span></div>');
     	$("#productSlideshow").parent().append('<div class="timer_container"><div class="timer-loader" style="display:none;"></div></div>');
