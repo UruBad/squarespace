@@ -52,7 +52,7 @@ var select_size;
 	for (var i = 1; i <= 6; i++)
         {
         	content += '<div class="slide trimirror_slide click_event content-fill" data-target="' + counter + '"><img src="http://static1.squarespace.com/static/573ff47b2eeb81d00cc8aea3/t/574e759ab6aa6043148aa31a/1464759706766/spin.gif" data-load="false" data-src="" data-image="" data-image-dimensions="373x585" data-image-focal-point="0.5,0.5" alt=""><div class=""></div></div>';
-        	contentBig += '<div class="slide trimiror_big_slide" data-target="' + counter + '"><img class='image_big' data-load="false" data-src="" data-image="" data-image-dimensions="500x910" data-image-focal-point="0.5,0.5" alt=""><div class=""></div></div>';
+        	contentBig += '<div class="slide trimiror_big_slide" data-target="' + counter + '"><img class="image_big" data-load="false" data-src="" data-image="" data-image-dimensions="500x910" data-image-focal-point="0.5,0.5" alt=""><div class=""></div></div>';
                 counter++;
 	}
 	$("#productThumbnails").append(content);
