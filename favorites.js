@@ -128,7 +128,7 @@ $(function () {
 			shareLink = shareLink.replace("#link#", encodeURIComponent(window.location.href)).replace("#items#", itemsNames.substring(0, itemsNames.length - 1)) + '&img=' + shotUrl;
 			html +=
 				'				</ul>' +
-                '     <div id="measurements_values">' +
+                '     <div id="measurements_values" style="bottom:0 !important;">' +
                 '       <table>' +
                 '         <tr>' +
                 '           <td>' +
