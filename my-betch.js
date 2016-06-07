@@ -465,9 +465,9 @@ function SetImage(view) {
         });
 
         if (currentCharacter == "woman")
-            $("#create-avatar-correct").attr("onclick", "window.location.href='/shop';return false;");
+            $("#create-avatar-correct").attr("onclick", "window.location.href='/womens';return false;");
         else
-            $("#create-avatar-correct").attr("onclick", "window.location.href='/shop';return false;");
+            $("#create-avatar-correct").attr("onclick", "window.location.href='/mens';return false;");
 
         $("#create-avatar-correct").show("scale", { percent: 100, origin: ['left', 'right'] }, 800);
         $("#avatarPreviewImg").attr("src", images[view - 1]);
