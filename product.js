@@ -58,6 +58,7 @@ var select_size;
                 counter++;
 	}
 	contentSmall += "</div>";
+	$(contentSmall).insertBefore($(".product-quantity-input"));
 	$("#productThumbnails").append(content);
 	$("#productThumbnails").append('<div class="slide trimirror_slide video_view"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>');
 	$("#productSlideshow").append(contentBig);
