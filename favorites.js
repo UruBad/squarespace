@@ -198,8 +198,7 @@ $(function () {
 
 		if (data.items.length > 0) {
 		    var url = "https://widget.trimirror.com/GetShotUrls?clientId=" + clientId + "&code=#code#&color=#color#&size=#size#&extcode=#extcode#&extcolor=#extcolor#&extsize=#extsize#&width=#width#&height=#height#&userId=#userId#&jpg";
-		    console.log($(".sqs-block-content"), $(".sqs-block-content").width());
-		    var blockWidth = $(".sqs-block-content").width();
+		    var blockWidth = $("#dressing_slides").width();
 		    var width = Math.ceil(blockWidth / 2) - 10;
 		    url = url.replace("#userId#", GetUserId()).replace("#width#", width).replace("#height#", Math.ceil(width * 1.5));
 		    var extItem = false
