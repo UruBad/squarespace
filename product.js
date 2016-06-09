@@ -48,7 +48,7 @@ var select_size;
     	
 	var content = '';
 	var contentBig = '';
-	var contentSmall = '<div class="trimirror_block">';
+	var contentSmall = '<div class="trimirror_block"><div class="header"><span class="header_text">Virtual fitting</span><div class="measurements"><span class="text">my measurements:</span><span id="measurements_value" class="measurements_value"></span><a href="/my-avatar" title="My Avatar">change</a></div>/div><div class="images">';
 	var counter = 1;
 	for (var i = 1; i <= 6; i++)
         {
@@ -57,17 +57,20 @@ var select_size;
         	contentBig += '<div class="slide trimiror_big_slide" data-target="' + counter + '"><img class="image_big" data-load="false" data-src="" data-image="" data-image-dimensions="500x910" data-image-focal-point="0.5,0.5" alt=""><div class=""></div></div>';
                 counter++;
 	}
+	contentSmall += '<div class="slide video_view"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>';
+	contentSmall += "</div>";
+	contentSmall += '<div class="buttons"><div><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner" id="yui_3_17_2_3_1463297059130_2963">Add to Dressing Room</div></button></div></div>";
 	contentSmall += "</div>";
 	$(contentSmall).insertBefore($(".product-quantity-input"));
 	$("#productThumbnails").append(content);
-	$("#productThumbnails").append('<div class="slide trimirror_slide video_view"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>');
+	//$("#productThumbnails").append('');
 	$("#productSlideshow").append(contentBig);
 	$("#productSlideshow").parent().append('<div id="trimirror_logo" style="background-position:63px 0 !important;display:none;z-index:889;-webkit-transform: rotate(270deg);-moz-transform: rotate(270deg);-o-transform: rotate(270deg);-ms-transform: rotate(270deg);transform: rotate(270deg);left:-10% !important;bottom:15% !important;line-height:21px;" class="trimirror_logo"><a class="touch_click" href="http://trimirror.com" target="_blank"><div><span>powered by</span><span>tri</span><span>Mirror</span></div></a></div>');
-  	$("#productSlideshow").parent().append('<div id="measurements_values"><table><tr><td><span>my measurements:</span></td><td class="link"><a href="/my-avatar" class="touch_click">change</a></td></tr><tr><td style="padding-bottom:5px;"><span id="measurement_value"></span></td><td></td></tr></table></div>');
+  	//$("#productSlideshow").parent().append('<div id="measurements_values"><table><tr><td><span>my measurements:</span></td><td class="link"><a href="/my-avatar" class="touch_click">change</a></td></tr><tr><td style="padding-bottom:5px;"><span id="measurement_value"></span></td><td></td></tr></table></div>');
     	$("#productSlideshow").parent().append('<div class="legend"><span class="tight">too tight</span><span class="loose">loose</span></div>');
     	$("#productSlideshow").parent().append('<div class="timer_container"><div class="timer-loader" style="display:none;"></div></div>');
 	//$(content).insertAfter();
-    	$('<div><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner" id="yui_3_17_2_3_1463297059130_2963">Add to Dressing Room</div></button></div>').insertAfter($(".sqs-add-to-cart-button-wrapper"));
+    	//$('').insertAfter($(".sqs-add-to-cart-button-wrapper"));
     	$("#add-to-favorites").click(function(){
     		AddToFavorites();
     	});
