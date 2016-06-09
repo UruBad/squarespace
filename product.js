@@ -29,8 +29,6 @@ var select_size;
             success: function (result) {
             	if(result.data[0].available){
                 	UpdatePage();
-                	UpdateSideBySide();
-                	YoutubeShare();
             	}
             	else {
             		$("select[data-variant-option-name='Size']").chosen({disable_search: true});
@@ -48,7 +46,7 @@ var select_size;
     	
 	var content = '';
 	var contentBig = '';
-	var contentSmall = '<div class="trimirror_block"><div class="header"><span class="header_text">Virtual fitting</span><div class="measurements"><span class="text">my measurements:</span><span id="measurements_value" class="measurements_value"></span><a href="/my-avatar" title="My Avatar">change</a></div></div><div class="images">';
+	var contentSmall = '<div class="trimirror_block"><div class="header"><span class="header_text">Virtual fitting</span><div class="measurements"><span class="text">My measurements:</span><span id="measurements_value" class="measurements_value"></span><a href="/my-avatar" title="My Avatar">change</a></div></div><div class="images">';
 	var counter = 1;
 	for (var i = 1; i <= 6; i++)
         {
@@ -59,7 +57,7 @@ var select_size;
 	}
 	contentSmall += '<div class="slide video_view"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>';
 	contentSmall += "</div>";
-	contentSmall += '<div class="buttons"><div><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner">Add to Dressing Room</div></button></div></div>';
+	contentSmall += '<div class="buttons"><div><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner">Add to Dressing Room</div></button></div><div><button class="sqs-suppress-edit-mode sqs-editable-button" id="side-by-side-button"><div class="sqs-add-to-cart-button-inner">Compare side-by-side</div></button></div></div>';
 	contentSmall += "</div>";
 	$(contentSmall).insertBefore($(".product-quantity-input"));
 	$("#productThumbnails").append(content);
@@ -74,6 +72,10 @@ var select_size;
     	$("#add-to-favorites").click(function(){
     		AddToFavorites();
     	});
+    	
+    	//Update all
+	UpdateSideBySide();
+	YoutubeShare();
 
     	$("select[data-variant-option-name='Size']").show();    
         product_code = trimirror_code;
@@ -163,8 +165,8 @@ var select_size;
                             }
                         }
                     }
-                    $("#measurements_values #measurement_value").html(result.substring(0, result.length - 1));
-                    $("#measurements_values").show();
+                    $("#measurements_value").html(result.substring(0, result.length - 1));
+                    $(".trimirror_block .measurements").show();
                 }
             }
         });
@@ -251,7 +253,7 @@ function AddToFavorites(){
                         $(".trimirror_slide[data-target='" + (i + 1) + "'] img:first").attr("src", urlImage);
                         $(".dop_slide[data-target='" + (i + 1) + "'] img:first").attr("src", urlImage);
                     }
-                    $(".trimirror_slide").show();
+                    $(".trimirror_block").show();
                       //Y.trigger("domready");
                 }
             }
