@@ -109,8 +109,10 @@ $(function () {
 			    html += '<li><img style="display:none;" src=""/></li>';
 			}		    	
 
-		    var shotUrl = "https://widget.trimirror.com/GetShot?clientId=" + clientId + "&code=#code#&color=#color#&size=#size#&extcode=#extcode#&extcolor=#extcolor#&extsize=#extsize#&width=430&height=585&view=1&userId=#userId#&jpg";
-		    shotUrl = shotUrl.replace("#userId#", GetUserId());
+		    var shotUrl = "https://widget.trimirror.com/GetShot?clientId=" + clientId + "&code=#code#&color=#color#&size=#size#&extcode=#extcode#&extcolor=#extcolor#&extsize=#extsize#&width=#width#&height=#height#&view=1&userId=#userId#&jpg";
+		    var blockWidth = $(".sqs-block-content").width();
+		    var width = Math.ceil(blockWidth / 2) - 10;
+		    shotUrl = shotUrl.replace("#userId#", GetUserId()).replace("#width#", width).replace("#height#", Math.ceil(width * 1.5));
 		    var extItemShot = false
 		    for (var c = 0; c < data.items.length; c++) {
 		    	var itemLook = data.items[c];
