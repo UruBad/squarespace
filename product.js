@@ -48,7 +48,7 @@ var select_size;
     	
 	var content = '';
 	var contentBig = '';
-	var contentSmall = '<div class="trimirror_block"><div class="header"><span class="header_text">Virtual fitting</span><div class="measurements"><span class="text">my measurements:</span><span id="measurements_value" class="measurements_value"></span><a href="/my-avatar" title="My Avatar">change</a></div>/div><div class="images">';
+	var contentSmall = '<div class="trimirror_block"><div class="header"><span class="header_text">Virtual fitting</span><div class="measurements"><span class="text">my measurements:</span><span id="measurements_value" class="measurements_value"></span><a href="/my-avatar" title="My Avatar">change</a></div><div class="images">';
 	var counter = 1;
 	for (var i = 1; i <= 6; i++)
         {
