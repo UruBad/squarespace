@@ -126,7 +126,7 @@ $(function () {
 		    		}
 		    	}
 		    }			
-
+			shotUrl = shotUrl.replace("#extcode#", "").replace("#extsize#", "").replace("#extcolor#", "");
 			shareLink = shareLink.replace("#link#", encodeURIComponent(window.location.href)).replace("#items#", itemsNames.substring(0, itemsNames.length - 1)) + '&img=' + shotUrl;
 			html +=
 				'				</ul>' +
@@ -213,6 +213,7 @@ $(function () {
 		    		}
 		    	}
 		    }
+		    url = url.replace("#extcode#", "").replace("#extsize#", "").replace("#extcolor#", "");
 		    console.log(url);
 		    $.ajax({
 		        url: url,
