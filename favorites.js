@@ -214,6 +214,7 @@ $(function () {
 		    		}
 		    	}
 		    }
+		    console.log(url);
 		    $.ajax({
 		        url: url,
 		        data: {},
