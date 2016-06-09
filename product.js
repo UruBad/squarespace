@@ -48,13 +48,16 @@ var select_size;
     	
 	var content = '';
 	var contentBig = '';
+	var contentSmall = '<div class="trimirror_block">';
 	var counter = 1;
 	for (var i = 1; i <= 6; i++)
         {
+        	contentSmall += '<div class="slide dop_slide" data-target="' + counter + '"><img src="" /><div class=""></div></div>';
         	content += '<div class="slide trimirror_slide click_event content-fill" data-target="' + counter + '"><img src="http://static1.squarespace.com/static/573ff47b2eeb81d00cc8aea3/t/574e759ab6aa6043148aa31a/1464759706766/spin.gif" data-load="false" data-src="" data-image="" data-image-dimensions="373x585" data-image-focal-point="0.5,0.5" alt=""><div class=""></div></div>';
         	contentBig += '<div class="slide trimiror_big_slide" data-target="' + counter + '"><img class="image_big" data-load="false" data-src="" data-image="" data-image-dimensions="500x910" data-image-focal-point="0.5,0.5" alt=""><div class=""></div></div>';
                 counter++;
 	}
+	contentSmall += "</div>";
 	$("#productThumbnails").append(content);
 	$("#productThumbnails").append('<div class="slide trimirror_slide video_view"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>');
 	$("#productSlideshow").append(contentBig);
@@ -116,6 +119,12 @@ var select_size;
         		$(".legend").hide();
         		$("#trimirror_logo").hide();
         	}
+        });
+        
+        $(".dop_slide").click(function(){
+        	var target = $(this).attr("data-target");
+        	$(".click_event[data-target='" + target + "']").click();
+        	return false;
         });
 
 
@@ -219,6 +228,7 @@ function AddToFavorites(){
                         $(".trimiror_big_slide[data-target='" + (i + 1) + "'] img:first").attr("data-src", urlImage);
                         $(".trimiror_big_slide[data-target='" + (i + 1) + "'] img:first").attr("data-image", urlImage);
                         $(".trimiror_big_slide[data-target='" + (i + 1) + "'] img:first").attr("src", urlImage);
+                        
                     }
                     $(".timer_container .timer-loader").hide();
                     //$("#preloader").hide();
@@ -235,6 +245,7 @@ function AddToFavorites(){
                     for (var i = 0; i < data.urls.length; i++) {
                         var urlImage = data.urls[i];
                         $(".trimirror_slide[data-target='" + (i + 1) + "'] img:first").attr("src", urlImage);
+                        $(".dop_slide[data-target='" + (i + 1) + "'] img:first").attr("src", urlImage);
                     }
                     $(".trimirror_slide").show();
                       //Y.trigger("domready");
