@@ -199,7 +199,7 @@ $(function () {
 		if (data.items.length > 0) {
 		    var url = "https://widget.trimirror.com/GetShotUrls?clientId=" + clientId + "&code=#code#&color=#color#&size=#size#&extcode=#extcode#&extcolor=#extcolor#&extsize=#extsize#&width=#width#&height=#height#&userId=#userId#&jpg";
 		    var width = $("#dressing_slides").width();
-		    url = url.replace("#userId#", GetUserId()).replace("#width#", width).replace("#height#", Math.ceil(width * 1.5));
+		    url = url.replace("#userId#", GetUserId()).replace("#width#", width).replace("#height#", Math.ceil(width * 1.38));
 		    var extItem = false
 		    for (var c = 0; c < data.items.length; c++) {
 		    	var itemLook = data.items[c];
