@@ -128,7 +128,6 @@ var select_size;
         	}
         });
         if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
-        	alert($("#productSlideshow .slide").not(".trimiror_big_slide").length);
         	$("#productSlideshow .slide").not(".trimiror_big_slide").click(function(){
         		$("#productSlideshow .trimiror_big_slide").animate({ opacity: "0" }, 500);
         	});
