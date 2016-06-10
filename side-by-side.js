@@ -18,7 +18,7 @@ function UpdateSideBySide() {
         $('#side-by-side').fadeOut('slow');
         if (updateSize != startSize) {
             $("select[data-variant-option-name='Size']").val(updateSize);
-            $("select[data-variant-option-name='Size']").trigger("chosen:updated");
+            $("select[data-variant-option-name='Size']").trigger("change");
         }
         return false;
     });
