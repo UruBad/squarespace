@@ -31,7 +31,7 @@ var select_size;
                 	UpdatePage();
             	}
             	else {
-            		$("select[data-variant-option-name='Size']").chosen({disable_search: true});
+            		//$("select[data-variant-option-name='Size']").chosen({disable_search: true}).change(function () {  });
             	}
             }
         });         
