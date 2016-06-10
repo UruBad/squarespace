@@ -27,7 +27,7 @@ var select_size;
             data: {data: JSON.stringify(data)},
             method: "POST",
             success: function (result) {
-            	if(result.data[0].available){
+            	if(!result.data[0].available){
                 	UpdatePage();
             	}
             	else {
