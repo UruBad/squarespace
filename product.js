@@ -31,7 +31,7 @@ var select_size;
                 	UpdatePage();
             	}
             	else {
-            		$("select[data-variant-option-name='Size']").chosen({disable_search: true}).change(function () { $("select[data-variant-option-name='Size'] option[value='" + $("select[data-variant-option-name='Size']").val() + "']").attr("selected", "selected"); });
+            		//$("select[data-variant-option-name='Size']").chosen({disable_search: true}).change(function () { $("select[data-variant-option-name='Size'] option[value='" + $("select[data-variant-option-name='Size']").val() + "']").attr("selected", "selected"); });
             	}
             }
         });         
@@ -93,10 +93,11 @@ var select_size;
         });*/
         $("select[data-variant-option-name='Size']").change(function () {
             trimirror_size = $("select[data-variant-option-name='Size']").val();
+            updatePictures();
         });
         // Update pictures if color or size are changed
-        $("select[data-variant-option-name='Size']").chosen({disable_search: true}).change(function () { updatePictures(); });
-        $(".chosen-results li").first().hide();
+        /*$("select[data-variant-option-name='Size']").chosen({disable_search: true}).change(function () {  });
+        $(".chosen-results li").first().hide();*/
  
         //$("#color").chosen().change(function () { updatePictures(); });
 
@@ -180,7 +181,7 @@ var select_size;
                     console.log(data.size);
                     console.log($("select[data-variant-option-name='Size']"));
                     $("select[data-variant-option-name='Size']").val(data.size.toUpperCase());
-                    $("select[data-variant-option-name='Size']").trigger("chosen:updated");
+                    $("select[data-variant-option-name='Size']").trigger("change");
                     updatePictures(true);
                 }
             }
