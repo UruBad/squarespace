@@ -129,7 +129,7 @@ var select_size;
         });
         
         $(".dop_slide a").click(function(){
-        	var target = $(this)parent().attr("data-target");
+        	var target = $(this).parent().attr("data-target");
         	$(".click_event[data-target='" + target + "']").click();
         	return false;
         });
