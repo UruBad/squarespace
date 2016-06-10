@@ -27,11 +27,11 @@ var select_size;
             data: {data: JSON.stringify(data)},
             method: "POST",
             success: function (result) {
-            	if(!result.data[0].available){
+            	if(result.data[0].available){
                 	UpdatePage();
             	}
             	else {
-            		$("select[data-variant-option-name='Size']").chosen({disable_search: true}).change(function () { $("select[data-variant-option-name='Size'] option[value='" + $("select[data-variant-option-name='Size']").val() + "']").click(); });
+            		//$("select[data-variant-option-name='Size']").chosen({disable_search: true}).change(function () { $("select[data-variant-option-name='Size'] option[value='" + $("select[data-variant-option-name='Size']").val() + "']").click(); });
             	}
             }
         });         
