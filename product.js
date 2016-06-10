@@ -19,7 +19,7 @@ var select_size;
         data.Data.push({
         	code: trimirror_code,
         	color: "",
-        	size: $("select[data-variant-option-name='Size']").val()
+        	size: ""
         });
         $.ajax({
             url: ("https://widget.trimirror.com/CheckItems?clientId=" + trimirror_clientId),
