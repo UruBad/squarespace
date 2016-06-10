@@ -129,6 +129,10 @@ var select_size;
         });
         
         $(".dop_slide a").click(function(){
+        	if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+        		$("#productSlideshow .slide").animate({ opacity: "0" }, 1000);
+        		$(".slide.trimiror_big_slide").stop().animate({ opacity: "100" }, 1000);
+        	}
         	var target = $(this).parent().attr("data-target");
         	$(".click_event[data-target='" + target + "']").trigger("click");
         	return false;
