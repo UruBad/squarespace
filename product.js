@@ -142,9 +142,9 @@ var select_size;
         	}
         });
         if ((navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) || navigator.userAgent.indexOf("MSIE ")) {
-        	$("#productSlideshow .slide").click(function(){
+        	$("#productSlideshow .slide img").click(function(){
         		alert("cool");
-        		if(!$(this).hasClass("trimiror_big_slide")){
+        		if(!$(this).parent().hasClass("trimiror_big_slide")){
         			$("#productSlideshow .trimiror_big_slide").animate({ opacity: "0" }, 500);
         		}
         	});
