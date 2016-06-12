@@ -100,7 +100,14 @@ var select_size;
             trimirror_size = $("select[data-variant-option-name='Size']").val();
             updatePictures();
             var itemsJson = JSON.parse($(".product-variants").attr("data-variants"));
-            console.log(itemsJson);
+            for(var i = 0; i < itemsJson.length; i++){
+            	var item = itemsJson[i];
+            	console.log(item);
+            	if(!!item.attributes && item.attributes.length > 0 && !!item.attributes[0].Size 
+            		&& item.attributes[0].Size == trimirror_size){
+            		$(".product-variants").attr("data-selected-variant", JSON.stringify(item));
+            	}
+            }
         });
         // Update pictures if color or size are changed
         /*$("select[data-variant-option-name='Size']").chosen({disable_search: true}).change(function () {  });
