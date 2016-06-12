@@ -24,7 +24,7 @@ $(function () {
 		if (data.isSuccess && data.items.length > 0) {
 			html =
 				'<section class="row">' +
-				'	<div class="col-sm-6 col-xs-12">' +
+				'	<div class="col-sm-6 col-xs-12 items">' +
 				'		<div class="row">';
 			var i, len, item;
 			var itemsNames = "";
@@ -32,7 +32,7 @@ $(function () {
 			    item = data.items[i];
 			    var actionName = "";
 			    html +=
-					'<div class="col-xs-5">' +
+					'<div class="col-xs-5 item">' +
 					'	<article class="shop-item shop-item-wishlist overlay-element">';
 			    if (item.look) {
 			        html += '<div class="overlay-parent mobile_dropdown active_look" data-hover=".overlay-contents" data-link="' + item.productUrl + '">';
@@ -186,6 +186,13 @@ $(function () {
 		}
 		
 		$("#favorites").html(html);
+		
+		var items = $("#favorites .items .item");
+		var arrayHeight = [];
+		for(var g = 0; g < items.length; g++)
+			arrayHeight.push($(items[g]).height());
+		var heightItem = Math.max.apply(null, arrayHeight);
+		$("#favorites .items .item").css("height", heightItem + "px");
 
 		$("#dressing_slides li img:first").load(function () {
 		    $("#preloader").hide();
