@@ -141,7 +141,8 @@ var select_size;
         		$("#trimirror_logo").hide();
         	}
         });
-        if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+        if ((navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) || navigator.userAgent.indexOf("MSIE ");) {
+        	alert('true');
         	$("#productSlideshow .slide").not(".trimiror_big_slide").click(function(){
         		alert("cool");
         		console.log($("#productSlideshow .trimiror_big_slide"));
