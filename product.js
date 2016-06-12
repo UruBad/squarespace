@@ -102,9 +102,9 @@ var select_size;
             var itemsJson = JSON.parse($(".product-variants").attr("data-variants"));
             for(var i = 0; i < itemsJson.length; i++){
             	var item = itemsJson[i];
-            	console.log(item.attributes, !!item.attributes, item.attributes.length, !!item.attributes[0].Size, trimirror_size);
-            	if(!!item.attributes && item.attributes.length > 0 && !!item.attributes[0].Size 
-            		&& item.attributes[0].Size == trimirror_size){
+            	console.log(item.attributes, !!item.attributes, !!item.attributes.Size, trimirror_size);
+            	if(!!item.attributes && !!item.attributes.Size 
+            		&& item.attributes.Size == trimirror_size){
             		$(".product-variants").attr("data-selected-variant", JSON.stringify(item));
             	}
             }
