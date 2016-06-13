@@ -149,7 +149,7 @@ var select_size;
         		$(".legend").hide();
         		$("#trimirror_logo").hide();
         		if ((navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) || navigator.userAgent.indexOf("MSIE ") != -1) {
-        			$("#productSlideshow .trimiror_big_slide").animate({ opacity: "0", filter: 'alpha(opacity=0)' }, 500);
+        			$("#productSlideshow .trimiror_big_slide").animate({ opacity: "0", filter: "alpha(opacity=0)" }, 500);
         		}
         	}
         });
@@ -157,8 +157,9 @@ var select_size;
         $(".dop_slide a").click(function(){
         	var target = $(this).parent().attr("data-target");
         	if ((navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) || navigator.userAgent.indexOf("MSIE ") != -1) {
-        		$("#productSlideshow .slide").animate({ opacity: "0", filter: 'alpha(opacity=0)' }, 500);
-        		$(".slide.trimiror_big_slide[data-target='" + target + "']").stop().animate({ opacity: "100", filter: 'alpha(opacity=100)' }, 500);
+        		alert(true);
+        		$("#productSlideshow .slide").animate({ opacity: "0", filter: "alpha(opacity=0)" }, 500);
+        		$(".slide.trimiror_big_slide[data-target='" + target + "']").stop().animate({ opacity: "100", filter: "alpha(opacity=100)" }, 500);
         	}
        		$(".click_event[data-target='" + target + "']").trigger("click");
         	return false;
