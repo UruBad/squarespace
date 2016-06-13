@@ -95,11 +95,9 @@ var select_size;
         $("select[data-variant-option-name='Size'] option").first().remove();
         trimirror_color = ""; //$("#color").val();
         if($("select[data-variant-option-name='Color']").length){
-        	alert("yes");
-        	trimirror_color = $("select[data-variant-option-name='Color']").val();
-        	alert(trimirror_color);
         	$("select[data-variant-option-name='Color'] option").first().remove();
         	$("select[data-variant-option-name='Color']").val($("select[data-variant-option-name='Color'] option:first").val());
+        	trimirror_color = $("select[data-variant-option-name='Color']").val();
         	$("select[data-variant-option-name='Color']").change(function () {
             		trimirror_color = $("select[data-variant-option-name='Color']").val();
             		updatePictures();
