@@ -160,10 +160,12 @@ var select_size;
         	alert(target);
         	console.log($(".slide.trimiror_big_slide[data-target='" + target + "']"));
         	if ((navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) || navigator.userAgent.indexOf("MSIE ")) {
-        		$("#productSlideshow .slide").animate({ opacity: "0" }, 500);
-        		$(".slide.trimiror_big_slide[data-target='" + target + "']").stop().animate({ opacity: "100" }, 500);
+        		$("#productSlideshow .slide").animate({ opacity: "0", filter: 'alpha(opacity=0)' }, 500);
+        		$(".slide.trimiror_big_slide[data-target='" + target + "']").stop().animate({ opacity: "100", filter: 'alpha(opacity=100)' }, 500);
         	}
-        	$(".click_event[data-target='" + target + "']").trigger("click");
+        	else{
+        		$(".click_event[data-target='" + target + "']").trigger("click");
+        	}
         	return false;
         });
 
