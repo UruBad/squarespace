@@ -162,7 +162,7 @@ var select_size;
         		$("#productSlideshow .slide").animate({ opacity: "0", filter: "alpha(opacity=0)" }, 500);
         		$(".slide.trimiror_big_slide[data-target='" + target + "']").stop().animate({ opacity: "100", filter: "alpha(opacity=100)" }, 500);
         	} else if(navigator.userAgent.indexOf("MSIE ") != -1){
-        		$("#productSlideshow .slide").fadeOut(500, funciton(){
+        		$("#productSlideshow .slide").fadeOut(500, function(){
         			$(".slide.trimiror_big_slide[data-target='" + target + "']").fadeIn(500);
         		});
         	}
