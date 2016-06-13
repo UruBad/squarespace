@@ -93,7 +93,7 @@ function UpdateSizes(current_size) {
 
 function GetShotUrlsSideBySide(size, container, container2) {
     if (typeof sideBySideImages[size] == 'undefined') {
-        var color = "";
+        var color = trimirror_color;
         var currentUrl = shotUrls.replace("#color#", color).replace("#size#", size).replace("#userId#", GetUserId());
         var url = currentUrl.replace("#width#", Math.ceil($("#" + container).width())).replace("#height#", Math.ceil($("#" + container).height()));
         $.ajax({
