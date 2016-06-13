@@ -139,7 +139,7 @@ var select_size;
         	} else if(!$(this).hasClass("video_view")){
         		$(".legend").hide();
         		$("#trimirror_logo").hide();
-        		$("#productSlideshow .trimiror_big_slide").animate({ opacity: "0" }, 500);
+        		$("#productSlideshow .trimiror_big_slide").animate({ opacity: "0", filter: 'alpha(opacity=0)' }, 500);
         	}
         });
         /*if ((navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) || navigator.userAgent.indexOf("MSIE ")) {
