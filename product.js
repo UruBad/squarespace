@@ -97,13 +97,14 @@ var select_size;
         if($("select[data-variant-option-name='Color']").length){
         	alert("yes");
         	trimirror_color = $("select[data-variant-option-name='Color']").val();
+        	alert(trimirror_color);
         	$("select[data-variant-option-name='Color'] option").first().remove();
         	$("select[data-variant-option-name='Color']").val($("select[data-variant-option-name='Color'] option:first").val());
         	$("select[data-variant-option-name='Color']").change(function () {
             		trimirror_color = $("select[data-variant-option-name='Color']").val();
             		updatePictures();
             		updateSelectedValue();
-        	});        	
+        	});  
         }
         
 	for (var i = 0; i < $("select[data-variant-option-name='Size'] option").length; i++) {
@@ -245,6 +246,7 @@ function AddToFavorites(){
         $(".timer_container .timer-loader").show();
         addTime = typeof addTime !== 'undefined' ? addTime : false;
         //$("#preloader").show();
+        alert("trimirror_color = " + trimirror_color);
         var color = trimirror_color;
         var size = $("select[data-variant-option-name='Size']").val();
 
