@@ -244,7 +244,6 @@ function AddToFavorites(){
         $(".timer_container .timer-loader").show();
         addTime = typeof addTime !== 'undefined' ? addTime : false;
         //$("#preloader").show();
-        alert("trimirror_color = " + trimirror_color);
         var color = trimirror_color;
         var size = $("select[data-variant-option-name='Size']").val();
 
