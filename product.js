@@ -47,7 +47,6 @@ var select_size;
             			alert(true);
             		$(".product-variants").attr("data-selected-variant", JSON.stringify(item));
             		$(".product-variants").attr("data-unselected-options", "[]");
-            		
             	}
             }    	
     }
@@ -95,10 +94,10 @@ var select_size;
         shotUrls = shotUrls.replace("#code#", trimirror_code);
         trimirror_name = $("h1.product-title").html();
         trimirror_size = $("select[data-variant-option-name='Size']").val();
-        $("select[data-variant-option-name='Size'] option").first().remove();
+        $("select[data-variant-option-name='Size'] option").first().hide();
         trimirror_color = ""; //$("#color").val();
         if($("select[data-variant-option-name='Color']").length){
-        	$("select[data-variant-option-name='Color'] option").first().remove();
+        	$("select[data-variant-option-name='Color'] option").first().hide();
         	$("select[data-variant-option-name='Color']").val($("select[data-variant-option-name='Color'] option:first").val());
         	trimirror_color = $("select[data-variant-option-name='Color']").val();
         	$("select[data-variant-option-name='Color']").change(function () {
