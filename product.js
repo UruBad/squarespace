@@ -93,9 +93,8 @@ var select_size;
         shotUrls = shotUrls.replace("#code#", trimirror_code);
         trimirror_name = $("h1.product-title").html();
         trimirror_size = $("select[data-variant-option-name='Size']").val();
-        $("select[data-variant-option-name='Size'] option").first().hide();
+        $("select[data-variant-option-name='Size'] option").first().remove();
         trimirror_color = ""; //$("#color").val();
-        console.log($("select[data-variant-option-name='Color']"));
         if($("select[data-variant-option-name='Color']").length){
         	alert("yes");
         	trimirror_color = $("select[data-variant-option-name='Color']").val();
