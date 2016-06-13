@@ -149,6 +149,7 @@ var select_size;
         		}
 		});*/
  		$(".productThumbnails .slide").click(function(){
+ 			alert(true);
  			if(!$(this).hasClass("trimiror_big_slide")){
 				$("#productSlideshow .trimiror_big_slide").animate({ opacity: "0" }, 500);
  			}
@@ -156,6 +157,8 @@ var select_size;
         }
         $(".dop_slide a").click(function(){
         	var target = $(this).parent().attr("data-target");
+        	alert(target);
+        	console.log($(".slide.trimiror_big_slide[data-target='" + target + "']"));
         	if ((navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) || navigator.userAgent.indexOf("MSIE ")) {
         		$("#productSlideshow .slide").animate({ opacity: "0" }, 500);
         		$(".slide.trimiror_big_slide[data-target='" + target + "']").stop().animate({ opacity: "100" }, 500);
