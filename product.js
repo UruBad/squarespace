@@ -42,7 +42,6 @@ var select_size;
             var itemsJson = JSON.parse($(".product-variants").attr("data-variants"));
             for(var i = 0; i < itemsJson.length; i++){
             	var item = itemsJson[i];
-            	console.log(item.attributes, !!item.attributes, !!item.attributes.Size, trimirror_size);
             	if(!!item.attributes && !!item.attributes.Size 
             		&& item.attributes.Size == trimirror_size && ((!!item.attributes.Color && item.attributes.Color == trimirror_color) || !item.attributes.Color)){
             		$(".product-variants").attr("data-selected-variant", JSON.stringify(item));
