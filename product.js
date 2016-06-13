@@ -45,6 +45,7 @@ var select_size;
             	if(!!item.attributes && !!item.attributes.Size 
             		&& item.attributes.Size == trimirror_size && ((!!item.attributes.Color && item.attributes.Color == trimirror_color) || !item.attributes.Color)){
             		$(".product-variants").attr("data-selected-variant", JSON.stringify(item));
+            		$(".product-variants").attr("data-unselected-options", "[]");
             	}
             }    	
     }
@@ -222,7 +223,6 @@ var select_size;
                     $("select[data-variant-option-name='Size']").val(data.size.toUpperCase());
                     $("select[data-variant-option-name='Size']").trigger("change");
                     updatePictures(true);
-                    updateSelectedValue();
                 }
             }
         });
