@@ -38,6 +38,17 @@ var select_size;
                 
     });
     
+    function updateSelectedValue(){
+            var itemsJson = JSON.parse($(".product-variants").attr("data-variants"));
+            for(var i = 0; i < itemsJson.length; i++){
+            	var item = itemsJson[i];
+            	console.log(item.attributes, !!item.attributes, !!item.attributes.Size, trimirror_size);
+            	if(!!item.attributes && !!item.attributes.Size 
+            		&& item.attributes.Size == trimirror_size && ((!!item.attributes.Color && item.attributes.Size == trimirror_color) || !item.attributes.Color)){
+            		$(".product-variants").attr("data-selected-variant", JSON.stringify(item));
+            	}
+            }    	
+    }
     
     
     function UpdatePage() {
@@ -82,11 +93,18 @@ var select_size;
         shotUrls = shotUrls.replace("#code#", trimirror_code);
         trimirror_name = $("h1.product-title").html();
         trimirror_size = $("select[data-variant-option-name='Size']").val();
+        $("select[data-variant-option-name='Size'] option").first().hide();
         trimirror_color = ""; //$("#color").val();
-        /*if(!!$("select[data-variant-option-name='Color']")){
-        	trimirror_color = $("select[data-variant-option-name='Size']").val();
-        	
-        }*/
+        if(!!$("select[data-variant-option-name='Color']")){
+        	trimirror_color = $("select[data-variant-option-name='Color']").val();
+        	$("select[data-variant-option-name='Color'] option").first().remove();
+        	$("select[data-variant-option-name='Color']").val($("select[data-variant-option-name='Color'] option:first").val());
+        	$("select[data-variant-option-name='Color']").change(function () {
+            		trimirror_color = $("select[data-variant-option-name='Color']").val();
+            		updatePictures();
+            		updateSelectedValue();
+        	});        	
+        }
         
 	for (var i = 0; i < $("select[data-variant-option-name='Size'] option").length; i++) {
 		var size = $($("select[data-variant-option-name='Size'] option")[i]).val();
@@ -97,17 +115,9 @@ var select_size;
             trimirror_color = $("#color").val();
         });*/
         $("select[data-variant-option-name='Size']").change(function () {
-            trimirror_size = $("select[data-variant-option-name='Size']").val();
-            updatePictures();
-            var itemsJson = JSON.parse($(".product-variants").attr("data-variants"));
-            for(var i = 0; i < itemsJson.length; i++){
-            	var item = itemsJson[i];
-            	console.log(item.attributes, !!item.attributes, !!item.attributes.Size, trimirror_size);
-            	if(!!item.attributes && !!item.attributes.Size 
-            		&& item.attributes.Size == trimirror_size){
-            		$(".product-variants").attr("data-selected-variant", JSON.stringify(item));
-            	}
-            }
+            	trimirror_size = $("select[data-variant-option-name='Size']").val();
+        	updatePictures();
+		updateSelectedValue();
         });
         // Update pictures if color or size are changed
         /*$("select[data-variant-option-name='Size']").chosen({disable_search: true}).change(function () {  });
@@ -212,7 +222,7 @@ var select_size;
 
 function AddToFavorites(){
 		var code = trimirror_code;
-		var color = "";
+		var color = trimirror_color;
 		var size = $("select[data-variant-option-name='Size']").val();
 		var title = $("#productDetails h1").html();
 		var price = parseFloat($(".sqs-money-native").html()) * 100;
@@ -235,7 +245,7 @@ function AddToFavorites(){
         $(".timer_container .timer-loader").show();
         addTime = typeof addTime !== 'undefined' ? addTime : false;
         //$("#preloader").show();
-        var color = "";
+        var color = trimirror_color;
         var size = $("select[data-variant-option-name='Size']").val();
 
         // Avatar pictures
