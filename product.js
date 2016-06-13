@@ -95,7 +95,8 @@ var select_size;
         trimirror_size = $("select[data-variant-option-name='Size']").val();
         $("select[data-variant-option-name='Size'] option").first().hide();
         trimirror_color = ""; //$("#color").val();
-        if(!!$("select[data-variant-option-name='Color']")){
+        console.log($("select[data-variant-option-name='Color']"));
+        if($("select[data-variant-option-name='Color']").length){
         	alert("yes");
         	trimirror_color = $("select[data-variant-option-name='Color']").val();
         	$("select[data-variant-option-name='Color'] option").first().remove();
