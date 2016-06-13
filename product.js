@@ -151,6 +151,7 @@ var select_size;
         		if ((navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1)) {
         			$("#productSlideshow .trimiror_big_slide").animate({ opacity: "0", filter: "alpha(opacity=0)" }, 500);
         		} else if(navigator.userAgent.indexOf("MSIE ") != -1){
+        			$("#productSlideshow .slide").show();
         			$("#productSlideshow .trimiror_big_slide").fadeOut(500);
         		}
         	}
