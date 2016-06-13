@@ -142,14 +142,17 @@ var select_size;
         	}
         });
         if ((navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) || navigator.userAgent.indexOf("MSIE ")) {
-        	$("#productSlideshow .slide img").click(function(){
-        		alert("cool");
-        		if(!$(this).parent().hasClass("trimiror_big_slide")){
-        			$("#productSlideshow .trimiror_big_slide").animate({ opacity: "0" }, 500);
+        	$.each($("#productSlideshow .slide"), function( key, value ) {
+        		if(!$(this).hasClass("trimiror_big_slide")){
+        			$(this).addClass("over_big_slide");
+        			$(this).html("<a href='#'>" + $(this).html() + "</a>");
         		}
-        	});
+		});
+ 		$(".over_big_slide a").click(function(){
+			$("#productSlideshow .trimiror_big_slide").animate({ opacity: "0" }, 500);
+        	});        	
         }
-        $(".dop_slide").click(function(){
+        $(".dop_slide a").click(function(){
         	var target = $(this).parent().attr("data-target");
         	if ((navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) || navigator.userAgent.indexOf("MSIE ")) {
         		$("#productSlideshow .slide").animate({ opacity: "0" }, 500);
