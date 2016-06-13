@@ -64,7 +64,7 @@ $(function () {
                     '           <span class="check_look"></span>' +
 					'		</div>' +
 					'		<header class="item-info-name-features-price">' +
-					'			<h4><a href="' + item.productUrl + '">' + item.title + " / " + item.size.toUpperCase() + '</a></h4>' +
+					'			<h4><a href="' + item.productUrl + '">' + item.title + " / " + item.size.toUpperCase() + " / " + item.color + '</a></h4>' +
 					/*'			<span class="features">' + item.colorTitle + ', ' + item.sizeTitle + '</span><br>' +*/
 					'			<span class="price">' + item.priceString + '</span>' +
 					'		</header>';
