@@ -222,6 +222,7 @@ var select_size;
                     $("select[data-variant-option-name='Size']").val(data.size.toUpperCase());
                     $("select[data-variant-option-name='Size']").trigger("change");
                     updatePictures(true);
+                    updateSelectedValue();
                 }
             }
         });
