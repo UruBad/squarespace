@@ -40,6 +40,9 @@ function UpdateSideBySide() {
         pausePlay: true
     });
     $('.flex-next, .flex-prev').html('');
+    $("#side_by_side_slider .first_li img.big, #side_by_side_slider .last_li img.big").click(function(){
+        alert($(this).attr("data-size"));
+    });
 }
 
 function UpdateSizes(current_size) {
@@ -147,5 +150,9 @@ function UpdateSidebySideContainer(item, container, container2) {
     $("#side_by_side_slider .last_li " + container2 + " img.big").attr("src", data[startIndex + 2]);
     $("#side_by_side_slider .last_li " + container2 + " img.tension").attr("src", data[tension]);
     $('#' + container + ' .side-by-side-loading').fadeOut();
+    if(container2 == ".first" || container2 == ".last" )    {
+        $("#side_by_side_slider .first_li " + container2 + " img.big").attr("data-size", item.size);
+        $("#side_by_side_slider .last_li " + container2 + " img.big").attr("data-size", item.size);
+    }
     $('#side_by_side_slider').fadeIn();
 }
