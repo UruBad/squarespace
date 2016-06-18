@@ -98,6 +98,7 @@ var select_size;
 		var target = $(this).attr("data-tension-id");
 		console.log(target);
 		$(".dop_slide[data-target='" + target + "']").click();
+		return false;
 	});
 	
     	$("select[data-variant-option-name='Size']").show();    
