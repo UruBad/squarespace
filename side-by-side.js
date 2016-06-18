@@ -40,8 +40,11 @@ function UpdateSideBySide() {
         pausePlay: true
     });
     $('.flex-next, .flex-prev').html('');
-    $("#side_by_side_slider .first_li img.big, #side_by_side_slider .last_li img.big").click(function(){
-        alert($(this).attr("data-size"));
+    $("#side_by_side_slider img.big").click(function(){
+        var size = $(this).attr("data-size");
+        if(!!size){
+            $(".side-by-side-size[data-size='" + size + "']]").click();
+        }
     });
 }
 
