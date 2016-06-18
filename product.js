@@ -66,7 +66,7 @@ var select_size;
         		dopCounter = counter - 3;
         	contentSmall += '<div class="slide dop_slide" data-target="' + dopCounter + '"><a href="#"><img src="" /></a><div class=""></div></div>';
         	content += '<div class="slide trimirror_slide click_event content-fill" data-target="' + counter + '"><img src="http://static1.squarespace.com/static/573ff47b2eeb81d00cc8aea3/t/574e759ab6aa6043148aa31a/1464759706766/spin.gif" data-load="false" data-src="" data-image="" data-image-dimensions="373x585" data-image-focal-point="0.5,0.5" alt=""><div class=""></div></div>';
-        	contentBig += '<div class="slide trimiror_big_slide" data-target="' + counter + '"><img class="image_big" data-load="false" data-src="" data-image="" data-image-dimensions="500x910" data-image-focal-point="0.5,0.5" alt=""><div class=""></div></div>';
+        	contentBig += '<div class="slide trimiror_big_slide" data-target="' + counter + '"><img class="image_big" data-load="false" data-src="" data-image="" data-image-dimensions="500x910" data-image-focal-point="0.5,0.5" alt=""><a class="tension_map" data-tension-id="' + dopCounter + '"><img src="" data-src="" alt=" " /></a><div class=""></div></div>';
                 counter++;
 	}
 	contentSmall += '<div class="slide video_view"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>';
@@ -92,7 +92,14 @@ var select_size;
     	//Update all
 	UpdateSideBySide();
 	YoutubeShare();
-
+	
+	$(".trimiror_big_slide a").click(function(){
+		console.log("yes");
+		var target = $(this).attr("data-tension-id");
+		console.log(target);
+		$(".dop_slide[data-target='" + target + "']").click();
+	});
+	
     	$("select[data-variant-option-name='Size']").show();    
         product_code = trimirror_code;
         shotUrls = shotUrls.replace("#code#", trimirror_code);
@@ -277,6 +284,7 @@ function AddToFavorites(){
                         $(".trimirror_slide[data-target='" + (i + 1) + "'] img:first").attr("data-src", urlImage);
                         $(".trimirror_slide[data-target='" + (i + 1) + "'] img:first").attr("data-image", urlImage);
                         $(".trimiror_big_slide[data-target='" + (i + 1) + "'] img:first").attr("data-src", urlImage);
+                        $(".trimiror_big_slide a[data-tension-id='" + (i + 1) + "'] img:first").attr("data-src", urlImage);
                         $(".trimiror_big_slide[data-target='" + (i + 1) + "'] img:first").attr("data-image", urlImage);
                         $(".trimiror_big_slide[data-target='" + (i + 1) + "'] img:first").attr("src", urlImage);
                         
