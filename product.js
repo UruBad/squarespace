@@ -94,10 +94,8 @@ var select_size;
 	YoutubeShare();
 	
 	$(".trimiror_big_slide a").click(function(){
-		console.log("yes");
 		var target = $(this).attr("data-tension-id");
-		console.log(target);
-		$(".dop_slide[data-target='" + target + "']").click();
+		$(".dop_slide[data-target='" + target + "'] a").click();
 		return false;
 	});
 	
