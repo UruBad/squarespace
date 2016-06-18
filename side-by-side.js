@@ -46,6 +46,10 @@ function UpdateSideBySide() {
             UpdateSizes($(this).attr("data-size"));
         }
     });
+    $(".flex-play").css("z-index", "10000");
+    $(".flex-play").click(function(){
+       alert(true);
+    });
 }
 
 function UpdateSizes(current_size) {
