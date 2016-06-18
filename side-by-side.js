@@ -43,7 +43,7 @@ function UpdateSideBySide() {
     $("#side_by_side_slider img.big").click(function(){
         var size = $(this).attr("data-size");
         if(!!size){
-            $(".side-by-side-size[data-size='" + size + "']]").click();
+            UpdateSizes($(this).attr("data-size"));
         }
     });
 }
