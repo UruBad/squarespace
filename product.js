@@ -204,7 +204,7 @@ var select_size;
             data: {},
             method: "POST",
             success: function (result) {
-                if (result.isSuccess) {
+                if (!result.isSuccess) {
         		$.ajax({
             			url: ("https://widget.trimirror.com/GetMeasurements?clientId=" + trimirror_clientId + "&userId=#userId#").replace("#userId#", GetUserId()),
             			dataType: "jsonp",
@@ -229,6 +229,10 @@ var select_size;
                 }
             }
         });
+                } else {
+                	$(".measurements a").attr("title", "Create your avatar");
+                	$(".measurements a").text("create your avatar");
+                	$(".measurements span").hide();
                 }
             }
         });
