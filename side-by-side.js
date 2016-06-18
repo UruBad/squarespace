@@ -30,12 +30,22 @@ function UpdateSideBySide() {
         return false;
     });
     $("#side_by_side_slider").flexslider({
-        controlNav: false,
+        controlNav: true,
         smoothHeight: false,
         slideshow: true,
         animationSpeed: 1000,
-        slideshowSpeed: 4000,
-        directionNav: true
+        slideshowSpeed: 6000,
+        directionNav: true,
+        touch: true,
+        start: function(slider) {
+            $('.icon-pause').click(function(){
+                slider.pause();
+            });
+
+            $('.icon-play').click(function(){
+                slider.play();                      
+            });
+        }
     });
     $('.flex-next, .flex-prev').html('');
 }
