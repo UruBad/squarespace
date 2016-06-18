@@ -156,6 +156,7 @@ function UpdateSidebySideContainer(item, container, container2) {
     if(container2 == ".first" || container2 == ".last" )    {
         $("#side_by_side_slider .first_li " + container2 + " img.big").attr("data-size", item.size);
         $("#side_by_side_slider .last_li " + container2 + " img.big").attr("data-size", item.size);
+        $("#side_by_side_slider .second_li " + container2 + " img.big").attr("data-size", item.size);
     }
     $('#side_by_side_slider').fadeIn();
 }
