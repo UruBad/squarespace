@@ -196,10 +196,18 @@ var select_size;
                 $(".legend").hide();
             }
         });
-
-        $.ajax({
+	
+	var checkUrl = "https://widget.trimirror.com/CheckMeasurements?clientId=" + trimirror_clientId + "&userId=" + GetUserId();
+	$.ajax({
             url: ("https://widget.trimirror.com/GetMeasurements?clientId=" + trimirror_clientId + "&userId=#userId#").replace("#userId#", GetUserId()),
             dataType: "jsonp",
+            data: {},
+            method: "POST",
+            success: function (result) {
+                if (result.isSuccess) {
+        		$.ajax({
+            			url: ("https://widget.trimirror.com/GetMeasurements?clientId=" + trimirror_clientId + "&userId=#userId#").replace("#userId#", GetUserId()),
+            			dataType: "jsonp",
             data: {},
             method: "POST",
             success: function (data) {
@@ -218,6 +226,9 @@ var select_size;
                     }
                     $("#measurements_value").html(result.substring(0, result.length - 1));
                     $(".trimirror_block .measurements").show();
+                }
+            }
+        });
                 }
             }
         });
