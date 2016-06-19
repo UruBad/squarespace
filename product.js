@@ -305,7 +305,8 @@ function AddToFavorites(){
                         $(".trimiror_big_slide a[data-tension-id='" + (i + 1) + "'] img:first").attr("data-src", urlImage);
                         $(".trimiror_big_slide[data-target='" + (i + 1) + "'] img:first").attr("data-image", urlImage);
                         $(".trimiror_big_slide[data-target='" + (i + 1) + "'] img:first").attr("src", urlImage);
-                        
+                        if(i == 2)
+                        	$("#pinterest_share").attr("href", $("#pinterest_share").attr("href").replace("#media#", urlImage));
                     }
                     $(".timer_container .timer-loader").hide();
                     //$("#preloader").hide();
