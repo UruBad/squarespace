@@ -176,7 +176,7 @@ var select_size;
         	}
         });
 	$("#default_avatar_error .confirm").click(function(){
-		$("#default_avatar_error").animate({ opacity: "0"});
+		$("#default_avatar_error").animate({ opacity: "0"}, 500);
 	});
         $(".dop_slide a").click(function(){
         	var target = $(this).parent().attr("data-target");
@@ -191,7 +191,7 @@ var select_size;
         	}
        		$(".click_event[data-target='" + target + "']").trigger("click");
        		if(defaultAvatar){
-       			$("#default_avatar_error").animate({ opacity: "100" });
+       			$("#default_avatar_error").animate({ opacity: "100", z-index: "5000" }, 500);
        			defaultAvatar = false;
        		}
        		
