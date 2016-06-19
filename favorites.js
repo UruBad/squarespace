@@ -154,9 +154,9 @@ $(function () {
                 '     </div>' +
 				'	</div>' +
 				'	</div>' +
-	            '       <div class="shop-product-single-social" style="margin-top:70px;">' +
+	            '       <div class="shop-product-single-social" style="margin-top:70px;width:90%;">' +
                 '           <span class="social-label pull-left">Share this look</span>' +
-		        '           <div class="social-widget social-widget-mini social-widget-dark">' +
+		        '           <div class="social-widget social-widget-mini social-widget-dark" style="float:right">' +
 			    '               <ul class="list-inline">' +
 				'                   <li>' +
                 '                       <a href="' + shareLink.replace("#shareType#", "Facebook") + '" id="facebook_share" rel="nofollow" title="Share on Facebook" class="fb share"><span class="sr-only">Facebook</span></a>' +
