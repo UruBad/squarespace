@@ -168,7 +168,7 @@ $(function () {
                 '                       <a href="' + shareLink.replace("#shareType#", "Pinterest") + '" id="pinterest_share" rel="nofollow" title="Share on Pinterest" class="pt share"><span class="sr-only">Pinterest</span></a>' +
                 '                   </li>' +
 		        '                   <li>' +
-                '                       <a href="#" id="youtube_share" rel="nofollow" title="Share on Youtube" class="yt youtube_share"><span class="sr-only">Youtube</span></a><span id="youtube_percent" style="display:none;font-size:16px;"></span>' +
+                '                       <a href="#" id="youtube_share" rel="nofollow" title="Share on Youtube" class="yt share youtube_share"><span class="sr-only">Youtube</span></a><span id="youtube_percent" style="display:none;font-size:16px;"></span>' +
                 '                   </li>' +
 			    '               </ul>' +
 		        '           </div>' +
