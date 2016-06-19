@@ -213,7 +213,7 @@ var select_size;
 	
 	var checkUrl = "https://widget.trimirror.com/CheckMeasurements?clientId=" + trimirror_clientId + "&userId=" + GetUserId();
 	$.ajax({
-            url: ("https://widget.trimirror.com/GetMeasurements?clientId=" + trimirror_clientId + "&userId=#userId#").replace("#userId#", GetUserId()),
+            url: checkUrl,
             dataType: "jsonp",
             data: {},
             method: "POST",
