@@ -218,8 +218,8 @@ var select_size;
             data: {},
             method: "POST",
             success: function (result) {
-            	defaultAvatar = result.isSuccess;
-                if (!result.isSuccess) {
+            	defaultAvatar = !result.isSuccess;
+                if (result.isSuccess) {
         		$.ajax({
             			url: ("https://widget.trimirror.com/GetMeasurements?clientId=" + trimirror_clientId + "&userId=#userId#").replace("#userId#", GetUserId()),
             			dataType: "jsonp",
