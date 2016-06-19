@@ -8,6 +8,7 @@ var select_size;
     var video_urls = "https://widget.trimirror.com/GetVideoUrls";
     var video_progress = "https://widget.trimirror.com/GetVideoWithProgress";
     var addToFavorites = "https://widget.trimirror.com/AddFavorites?clientId=" + trimirror_clientId
+    var defaultAvatar = false;
     
     $(function () {
 
@@ -81,6 +82,8 @@ var select_size;
 	$("#productThumbnails").append(content);
 	//$("#productThumbnails").append('');
 	$("#productSlideshow").append(contentBig);
+	var contentError = '<div style="display:none;" class="yui3-widget sqs-widget sqs-widgets-confirmation alert shown" id="default_avatar_error"><div class="sqs-widgets-confirmation-content clear"><div id="yui_3_17_2_19_1466335872277_2204" class="sqs-widgets-confirmation-content clear"><div class="title">Default avatar measurements</div><div class="message">Sorry, that item variant is unavailable. Please <a href="/my-avatar">create your avatar</a></div><div class="buttons"><div class="confirmation-button no-frame confirm" tabindex="3">Okay</div></div></div></div></div>'
+	$("#productSlideshow").append(contentError);
 	$("#productSlideshow").parent().append('<div id="trimirror_logo" style="background-position:63px 0 !important;display:none;z-index:889;-webkit-transform: rotate(270deg);-moz-transform: rotate(270deg);-o-transform: rotate(270deg);-ms-transform: rotate(270deg);transform: rotate(270deg);left:-10% !important;bottom:15% !important;line-height:21px;" class="trimirror_logo"><a class="touch_click" href="http://trimirror.com" target="_blank"><div><span>powered by</span><span>tri</span><span>Mirror</span></div></a></div>');
   	//$("#productSlideshow").parent().append('<div id="measurements_values"><table><tr><td><span>my measurements:</span></td><td class="link"><a href="/my-avatar" class="touch_click">change</a></td></tr><tr><td style="padding-bottom:5px;"><span id="measurement_value"></span></td><td></td></tr></table></div>');
     	$("#productSlideshow").parent().append('<div class="legend"><span class="tight">too tight</span><span class="loose">loose</span></div>');
@@ -172,7 +175,9 @@ var select_size;
         		}
         	}
         });
-
+	$("#default_avatar_error .confirm").click(function(){
+		$("#default_avatar_error").hide();
+	});
         $(".dop_slide a").click(function(){
         	var target = $(this).parent().attr("data-target");
         	console.log(navigator.userAgent);
@@ -185,6 +190,11 @@ var select_size;
         		});
         	}
        		$(".click_event[data-target='" + target + "']").trigger("click");
+       		if(defaultAvatar){
+       			$("#default_avatar_error").show();
+       			defaultAvatar = false;
+       		}
+       		
         	return false;
         });
 
@@ -208,6 +218,7 @@ var select_size;
             data: {},
             method: "POST",
             success: function (result) {
+            	defaultAvatar = result.isSuccess;
                 if (!result.isSuccess) {
         		$.ajax({
             			url: ("https://widget.trimirror.com/GetMeasurements?clientId=" + trimirror_clientId + "&userId=#userId#").replace("#userId#", GetUserId()),
