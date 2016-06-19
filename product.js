@@ -47,6 +47,7 @@ var select_size;
             		&& item.attributes.Size == trimirror_size && ((!!item.attributes.Color && item.attributes.Color == trimirror_color) || !item.attributes.Color)){
             		$(".product-variants").attr("data-selected-variant", JSON.stringify(item));
             		$(".product-variants").attr("data-unselected-options", "[]");
+            		$(".product-variants").attr("data-variant-in-stock", "true");
             	}
             }    	
     }
