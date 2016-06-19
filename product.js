@@ -191,7 +191,7 @@ var select_size;
         	}
        		$(".click_event[data-target='" + target + "']").trigger("click");
        		if(defaultAvatar){
-       			$("#default_avatar_error").animate({ opacity: "100", z-index: "5000" };
+       			$("#default_avatar_error").animate({ opacity: "100", z-index: "5000" });
        			defaultAvatar = false;
        		}
        		
