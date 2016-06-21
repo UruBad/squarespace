@@ -11,7 +11,6 @@ var select_size;
     var defaultAvatar = false;
     
     $(function () {
-
     	var link = window.location.href.split('/');
     	var name = link[link.length - 1];
         trimirror_code = name.split('?')[0];
@@ -255,20 +254,32 @@ var select_size;
             }
         });
 
-        $.ajax({
-            url: ("https://widget.trimirror.com/GetBestSize?clientId=" + trimirror_clientId + "&code=#code#&color=#color#&size=#size#&userId=#userId#").replace("#code#", trimirror_code).replace("#color#", trimirror_color).replace("#size#", trimirror_size).replace("#userId#", GetUserId()),
-            dataType: "jsonp",
-            success: function (data) {
-                console.dir(data);
-                if (data.isSuccess) {
-                    console.log(data.size);
-                    console.log($("select[data-variant-option-name='Size']"));
-                    $("select[data-variant-option-name='Size']").val(data.size.toUpperCase());
-                    $("select[data-variant-option-name='Size']").trigger("change");
-                    updatePictures(true);
-                }
-            }
-        });
+
+    	var linkSize = window.location.href.split('#');
+    	var sizeSelected = false;
+    	if(linkSize.length > 1){
+    		var size = linkSize[1].split("=");
+    		if(size.length > 1 && size[0] == "size"){
+    			sizeSelected = true;	
+                    	$("select[data-variant-option-name='Size']").val(size[1].toUpperCase());
+                    	$("select[data-variant-option-name='Size']").trigger("change");
+                    	updatePictures(true);    			
+    		}
+    	}
+	if(!sizeSelected){
+        	$.ajax({
+            		url: ("https://widget.trimirror.com/GetBestSize?clientId=" + trimirror_clientId + "&code=#code#&color=#color#&size=#size#&userId=#userId#").replace("#code#", trimirror_code).replace("#color#", trimirror_color).replace("#size#", trimirror_size).replace("#userId#", GetUserId()),
+            		dataType: "jsonp",
+            		success: function (data) {
+                		console.dir(data);
+                		if (data.isSuccess) {
+                    			$("select[data-variant-option-name='Size']").val(data.size.toUpperCase());
+                    			$("select[data-variant-option-name='Size']").trigger("change");
+					updatePictures(true);
+                		}
+            		}
+        	});
+	}
         $(".flex-next, .flex-prev").html("");
     }
 
@@ -281,7 +292,7 @@ function AddToFavorites(){
 		var imgUrl = $("#productThumbnails img").first().attr("data-image");
 		$.ajax({
 			url: addToFavorites,
-			data: "code=" + code + "&color=" + color + "&size=" + size + "&userId=" + GetUserId() + "&title=" + encodeURI(title) + "&price=" + price + "&imgUrl=" + encodeURI(imgUrl) + "&productUrl=" + encodeURI(window.location.href),
+			data: "code=" + code + "&color=" + color + "&size=" + size + "&userId=" + GetUserId() + "&title=" + encodeURI(title) + "&price=" + price + "&imgUrl=" + encodeURI(imgUrl) + "&productUrl=" + encodeURI(window.location.href + "#size=" + size),
 			method: "post",
 			dataType: "jsonp",
 			success: UpdateFavorites,
