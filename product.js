@@ -247,8 +247,9 @@ var select_size;
         });
                 } else {
                 	$(".measurements a").attr("title", "Create your avatar");
-                	$(".measurements a").text("create your avatar");
+                	$(".measurements a").text("Create your avatar");
                 	$(".measurements span").hide();
+                	$(".measurements").css("width", "35%");
                 }
             }
         });
