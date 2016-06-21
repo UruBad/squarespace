@@ -292,7 +292,7 @@ function AddToFavorites(){
 		var imgUrl = $("#productThumbnails img").first().attr("data-image");
 		$.ajax({
 			url: addToFavorites,
-			data: "code=" + code + "&color=" + color + "&size=" + size + "&userId=" + GetUserId() + "&title=" + encodeURI(title) + "&price=" + price + "&imgUrl=" + encodeURI(imgUrl) + "&productUrl=" + encodeURI(window.location.href + "#size=" + size),
+			data: "code=" + code + "&color=" + color + "&size=" + size + "&userId=" + GetUserId() + "&title=" + encodeURI(title) + "&price=" + price + "&imgUrl=" + encodeURI(imgUrl) + "&productUrl=" + encodeURI(window.location.href + "?size=" + size),
 			method: "post",
 			dataType: "jsonp",
 			success: UpdateFavorites,
