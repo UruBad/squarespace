@@ -126,9 +126,8 @@ $(function () {
 		    		}
 		    	}
 		    }	
-		    	alert(shotUrl);
 			shotUrl = shotUrl.replace("#extcode#", "").replace("#extsize#", "").replace("#extcolor#", "");
-			shareLink = shareLink.replace("#link#", encodeURIComponent(window.location.href)).replace("#items#", itemsNames.substring(0, itemsNames.length - 1)) + '&img=' + shotUrl;
+			shareLink = shareLink.replace("#link#", encodeURIComponent(window.location.href)).replace("#items#", itemsNames.substring(0, itemsNames.length - 1)) + '&img=' + encodeURIComponent(shotUrl);
 			html +=
 				'				</ul>' +
                 '     <div id="measurements_values" style="bottom:0 !important;">' +
