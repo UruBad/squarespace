@@ -71,12 +71,13 @@ var select_size;
         	contentBig += '<div class="slide trimiror_big_slide" data-target="' + counter + '"><img class="image_big" data-load="false" data-src="" data-image="" data-image-dimensions="500x910" data-image-focal-point="0.5,0.5" alt=""><a class="tension_map" data-tension-id="' + dopCounter + '"><img src="" data-src="" alt=" " /></a><div class=""></div></div>';
                 counter++;
 	}
+	var shareText = encodeURI("Check out this " + $("#productDetails h1").html() + " I tried on in the Jean Shop virtual fitting room. You can customize your own avatar and try it too.");
 	contentSmall += '<div class="slide video_view"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>';
 	contentSmall += "</div>";
 	contentSmall += '<div class="buttons"><div><button class="sqs-suppress-edit-mode sqs-editable-button" id="side-by-side-button"><div class="sqs-add-to-cart-button-inner">Compare side-by-side</div></button><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner">Add to Dressing Room</div></button></div></div>';
-	contentSmall += '<div class="shop-product-single-social" style="margin-bottom:50px;"><div class="social-widget social-widget-mini social-widget-dark" style="float:right"><ul class="list-inline"><li><a href="https://www.facebook.com/sharer/sharer.php?s=100&p[images][0]=https://widget.trimirror.com/BinaryData/Cache/2016-06-19/19/1962985020e74f93af80bf029f58f87a.jpeg&p[title]=EXAMPLE&p[summary]=EXAMPLE&p[url]=' + window.location.href + '" id="facebook_share" onclick=" window.open(this.href, \'facebook-share\', \'width=580,height=296\'); return false; " rel="nofollow" title="Facebook" class="fb share"> <span class="sr-only">Facebook</span> </a></li>';
-	contentSmall += '<li> <a href="http://twitter.com/share?text=CreateIT&amp;url=' + window.location.href + '" id="twitter_share" onclick=" window.open(this.href, \'twitter-share\', \'width=550,height=235\'); return false;" rel="nofollow" title=" Share on Twitter" class="tw share"> <span class="sr-only">Twitter</span></a></li>';
-	contentSmall += '<li><a href="https://pinterest.com/pin/create/button/?url=' + window.location.href + '&amp;media=#media#" id="pinterest_share" onclick=" window.open(this.href, \'pinterest-share\', \'width=490,height=530\'); return false;" rel="nofollow" title="Pinterest" class="pt share"><span class="sr-only">Pinterest</span></a></li>';
+	contentSmall += '<div class="shop-product-single-social" style="margin-bottom:50px;"><div class="social-widget social-widget-mini social-widget-dark" style="float:right"><ul class="list-inline"><li><a href="https://www.facebook.com/sharer/sharer.php?u=' + window.location.href + '" id="facebook_share" onclick=" window.open(this.href, \'facebook-share\', \'width=580,height=296\'); return false; " rel="nofollow" title="Facebook" class="fb share"> <span class="sr-only">Facebook</span> </a></li>';
+	contentSmall += '<li> <a href="http://twitter.com/share?text=' + shareText + '&amp;url=' + window.location.href + '" id="twitter_share" onclick=" window.open(this.href, \'twitter-share\', \'width=550,height=235\'); return false;" rel="nofollow" title=" Share on Twitter" class="tw share"> <span class="sr-only">Twitter</span></a></li>';
+	contentSmall += '<li><a href="#" data-href="https://pinterest.com/pin/create/button/?url=' + window.location.href + '&amp;media=#media#" id="pinterest_share" onclick=" window.open(this.href, \'pinterest-share\', \'width=490,height=530\'); return false;" rel="nofollow" title="Pinterest" class="pt share"><span class="sr-only">Pinterest</span></a></li>';
 	contentSmall += '<li> <a href="#" id="youtube_share" rel="nofollow" title="Youtube" class="yt share youtube_share"><span class="sr-only">Youtube</span></a><span id="youtube_percent" style="display:none;font-size:16px;"></span></li></ul></div></div>';
 	contentSmall += "</div>";
 	$(contentSmall).insertBefore($(".product-quantity-input"));
@@ -195,7 +196,7 @@ var select_size;
        			$("#default_avatar_error").animate({ opacity: "100" }, 500);
        			defaultAvatar = false;
        		}
-       		
+       		$("#pinterest_share").attr("href", $("#pinterest_share").attr("data-href").replace("#media#", $(".click_event[data-target='" + target + "'] img").attr("src")));
         	return false;
         });
 
@@ -319,7 +320,7 @@ function AddToFavorites(){
                         $(".trimiror_big_slide[data-target='" + (i + 1) + "'] img:first").attr("data-image", urlImage);
                         $(".trimiror_big_slide[data-target='" + (i + 1) + "'] img:first").attr("src", urlImage);
                         if(i == 2)
-                        	$("#pinterest_share").attr("href", $("#pinterest_share").attr("href").replace("#media#", urlImage));
+                        	$("#pinterest_share").attr("href", $("#pinterest_share").attr("data-href").replace("#media#", urlImage));
                     }
                     $(".timer_container .timer-loader").hide();
                     //$("#preloader").hide();
