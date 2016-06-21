@@ -196,7 +196,7 @@ var select_size;
        			$("#default_avatar_error").animate({ opacity: "100" }, 500);
        			defaultAvatar = false;
        		}
-       		$("#pinterest_share").attr("href", $("#pinterest_share").attr("data-href").replace("#media#", $(".click_event[data-target='" + target + "'] img").attr("src")));
+       		$("#pinterest_share").attr("href", $("#pinterest_share").attr("data-href").replace("#media#", $(".trimiror_big_slide[data-target='" + target + "'] img").attr("src")));
         	return false;
         });
 
