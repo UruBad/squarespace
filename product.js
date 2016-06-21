@@ -255,7 +255,7 @@ var select_size;
         });
 
 
-    	var linkSize = window.location.href.split('#');
+    	var linkSize = window.location.href.split('?');
     	var sizeSelected = false;
     	if(linkSize.length > 1){
     		var size = linkSize[1].split("=");
