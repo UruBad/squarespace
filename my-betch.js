@@ -1,3 +1,4 @@
+var privacyPolicyText = "Your data is always kept completely private. We may use it for analyzing how our customers use our fitting room as a group, but it's never assigned to you individually. It is also saved as part of your cookies (which you can delete any time,) so that the next time you visit this site your avatar will be ready.";
 var slidersArray = [];
 var invalidMeasurements = [];
 var userId = "";
@@ -6,6 +7,14 @@ var backTabId = 1;
 var currentCharacter = "";
 
 $(document).ready(function () {
+    var privacyPolicy = '<div class="yui3-widget sqs-widget sqs-widgets-confirmation alert shown" style="opacity:0" id="privacy_policy"><div class="sqs-widgets-confirmation-content clear"><div class="title">Privacy Policy</div><div class="message">' + privacyPolicyText + '</div><div class="buttons"><div class="confirmation-button no-frame confirm" tabindex="3">Okay</div></div></div></div>';
+    $("#tabs").append(privacyPolicy);
+    $("#privacy_policy .confirm").click(function(){
+		$("#privacy_policy").animate({ opacity: "0"}, 500);
+	});
+	$("#privacy_policy_link").click(function(){
+	    $("#privacy_policy").animate({ opacity: "1"}, 500);
+	});
     var trimirror_cookie = $.cookie('trimirror_anonim_user_id');
     if (trimirror_cookie != null) {
         var remember = true;
