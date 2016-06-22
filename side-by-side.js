@@ -10,6 +10,11 @@ function UpdateSideBySide() {
         $("#side-by-side").fadeIn("slow");
         startSize = $("select[data-variant-option-name='Size'] option:selected").val();
         UpdateSizes(startSize);
+        var trimirror_show_info = $.cookie('trimirror_show_info');
+        if (trimirror_show_info == null) {
+            $("#side_by_side_info").animate({ opacity: "1"}, 500);
+        }
+     
     });
     $(".side-by-side-size:not(.active)").click(function () {
         UpdateSizes($(this).attr("data-size"));
