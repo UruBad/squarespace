@@ -14,6 +14,7 @@ $(document).ready(function () {
 	});
 	$("#privacy_policy_link").click(function(){
 	    $("#privacy_policy").animate({ opacity: "1"}, 500);
+	    return false;
 	});
     var trimirror_cookie = $.cookie('trimirror_anonim_user_id');
     if (trimirror_cookie != null) {
