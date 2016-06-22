@@ -70,7 +70,7 @@ var select_size;
         	contentBig += '<div class="slide trimiror_big_slide" data-target="' + counter + '"><img class="image_big" data-load="false" data-src="" data-image="" data-image-dimensions="500x910" data-image-focal-point="0.5,0.5" alt=""><a class="tension_map" data-tension-id="' + dopCounter + '"><img src="" data-src="" alt=" " /></a><div class=""></div></div>';
                 counter++;
 	}
-	var shareText = encodeURI("Check out this " + $("#productDetails h1").html() + " I tried on in the Jean Shop virtual fitting room. You can customize your own avatar and try it too.");
+	var shareText = encodeURI("Check out the Jean Shop virtual fitting room and customize your own avatar to try on clothes in 3D.");
 	contentSmall += '<div class="slide video_view"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>';
 	contentSmall += "</div>";
 	contentSmall += '<div class="buttons"><div><button class="sqs-suppress-edit-mode sqs-editable-button" id="side-by-side-button"><div class="sqs-add-to-cart-button-inner">Compare side-by-side</div></button><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner">Add to Dressing Room</div></button></div></div>';
