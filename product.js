@@ -59,6 +59,7 @@ var select_size;
     	$("#productSummary").append('<div id="catwalk-wrapper" class="mfp-hide"><div id="catwalk-preloader"></div><video id="video1" width="640" height="480" autobuffer preload="auto" controls style="display:none;"><source type="video/mp4">Your browser does not support the HTML5 video.</video><video id="video2" width="640" height="480" autobuffer preload="auto" controls style="display:none;"><source type="video/mp4">Your browser does not support the HTML5 video.</video></div>');
     	$("#side_by_side_info .confirm").click(function(){
 		$("#side_by_side_info").animate({ opacity: "0"}, 500);
+		$.cookie('trimirror_show_info', "showed", { expires: 30, path: "/" });
 	});
     	
 	var content = '';
