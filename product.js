@@ -77,12 +77,13 @@ var select_size;
                 counter++;
 	}
 	var shareText = encodeURI("Check out the Jean Shop virtual fitting room and customize your own avatar to try on clothes in 3D.");
+	var facebookShareLink = var shareLink = "https://widget.trimirror.com/VendorSharing/Facebook?clientId=" + trimirror_clientId + "&link=#link#&items=" + encodeURIComponent($("#productDetails h1").html());
 	contentSmall += '<div class="slide video_view"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>';
 	contentSmall += "</div>";
 	contentSmall += '<div class="buttons"><div><button class="sqs-suppress-edit-mode sqs-editable-button" id="side-by-side-button"><div class="sqs-add-to-cart-button-inner">Compare side-by-side</div></button><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner">Add to Dressing Room</div></button></div></div>';
-	contentSmall += '<div class="shop-product-single-social" style="margin-bottom:50px;"><div class="social-widget social-widget-mini social-widget-dark" style="float:right"><ul class="list-inline"><li><a href="https://www.facebook.com/sharer/sharer.php?u=' + window.location.href + '" id="facebook_share" onclick=" window.open(this.href, \'facebook-share\', \'width=580,height=296\'); return false; " rel="nofollow" title="Facebook" class="fb share"> <span class="sr-only">Facebook</span> </a></li>';
-	contentSmall += '<li> <a href="http://twitter.com/share?text=' + shareText + '" id="twitter_share" onclick=" window.open(this.href, \'twitter-share\', \'width=550,height=235\'); return false;" rel="nofollow" title=" Share on Twitter" class="tw share"> <span class="sr-only">Twitter</span></a></li>';
-	contentSmall += '<li><a href="#" data-href="https://pinterest.com/pin/create/button/?url=' + window.location.href + '&amp;media=#media#" id="pinterest_share" onclick=" window.open(this.href, \'pinterest-share\', \'width=490,height=530\'); return false;" rel="nofollow" title="Pinterest" class="pt share"><span class="sr-only">Pinterest</span></a></li>';
+	contentSmall += '<div class="shop-product-single-social" style="margin-bottom:50px;"><div class="social-widget social-widget-mini social-widget-dark" style="float:right"><ul class="list-inline"><li><a href="" data-href="' + facebookShareLink + '" id="facebook_share" onclick=" window.open(this.href, \'facebook-share\', \'width=580,height=296\'); return false; " rel="nofollow" title="Facebook" class="fb share"> <span class="sr-only">Facebook</span> </a></li>';
+	contentSmall += '<li> <a href="http://twitter.com/share?text=' + shareText + '&url=' + window.location.href + '" id="twitter_share" onclick=" window.open(this.href, \'twitter-share\', \'width=550,height=235\'); return false;" rel="nofollow" title=" Share on Twitter" class="tw share"> <span class="sr-only">Twitter</span></a></li>';
+	contentSmall += '<li><a href="#" data-href="https://pinterest.com/pin/create/button/?url=' + window.location.href + '&amp;description=' + encodeURIComponent(shareText) + '&amp;media=#media#" id="pinterest_share" onclick=" window.open(this.href, \'pinterest-share\', \'width=490,height=530\'); return false;" rel="nofollow" title="Pinterest" class="pt share"><span class="sr-only">Pinterest</span></a></li>';
 	contentSmall += '<li> <a href="#" id="youtube_share" rel="nofollow" title="Youtube" class="yt share youtube_share"><span class="sr-only">Youtube</span></a><span id="youtube_percent" style="display:none;font-size:16px;"></span></li></ul></div></div>';
 	contentSmall += "</div>";
 	$(contentSmall).insertBefore($(".product-quantity-input"));
@@ -202,6 +203,8 @@ var select_size;
        			defaultAvatar = false;
        		}
        		$("#pinterest_share").attr("href", $("#pinterest_share").attr("data-href").replace("#media#", $(".trimiror_big_slide[data-target='" + target + "'] img").attr("src")));
+       		$("#facebook_share").attr("href", $("#facebook_share").attr("data-href").replace("#link#", $(".trimiror_big_slide[data-target='" + target + "'] img").attr("src")));
+       		facebook_share
         	return false;
         });
 
@@ -338,6 +341,7 @@ function AddToFavorites(){
                         $(".trimiror_big_slide[data-target='" + (i + 1) + "'] img:first").attr("src", urlImage);
                         if(i == 0)
                         	$("#pinterest_share").attr("href", $("#pinterest_share").attr("data-href").replace("#media#", urlImage));
+                        	$("#facebook_share").attr("href", $("#facebook_share").attr("data-href").replace("#link#", urlImage));
                     }
                     $(".timer_container .timer-loader").hide();
                     //$("#preloader").hide();
