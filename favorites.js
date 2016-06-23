@@ -128,6 +128,7 @@ $(function () {
 		    }	
 			shotUrl = shotUrl.replace("#extcode#", "").replace("#extsize#", "").replace("#extcolor#", "");
 			shareLink = shareLink.replace("#link#", encodeURIComponent(window.location.href)).replace("#items#", itemsNames.substring(0, itemsNames.length - 1)) + '&img=' + encodeURIComponent(shotUrl);
+			var shareTwitterText = "Check out this Jean Shop outfit I put together in 3D. I made my avatar, and can see how it would fit me and look while walking on a runway.";
 			html +=
 				'				</ul>' +
                 '     <div id="measurements_values" style="bottom:0 !important;">' +
@@ -162,7 +163,7 @@ $(function () {
                 '                       <a href="' + shareLink.replace("#shareType#", "Facebook") + '" id="facebook_share" rel="nofollow" title="Share on Facebook" class="fb share"><span class="sr-only">Facebook</span></a>' +
 				'                   </li>' +
 		        '                   <li>' +
-                '                       <a href="' + shareLink.replace("#shareType#", "Twitter") + '" id="twitter_share" rel="nofollow" title="Share on Twitter" class="tw share"><span class="sr-only">Twitter</span></a>' +
+                '                       <a href="http://twitter.com/share?text=' + shareTwitterText + '" id="twitter_share" rel="nofollow" title="Share on Twitter" class="tw share"><span class="sr-only">Twitter</span></a>' +
                 '                   </li>' +
 		        '                   <li>' +
                 '                       <a href="' + shareLink.replace("#shareType#", "Pinterest") + '" id="pinterest_share" rel="nofollow" title="Share on Pinterest" class="pt share"><span class="sr-only">Pinterest</span></a>' +
