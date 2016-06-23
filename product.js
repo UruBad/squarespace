@@ -77,7 +77,7 @@ var select_size;
                 counter++;
 	}
 	var shareText = encodeURI("Check out the Jean Shop virtual fitting room and customize your own avatar to try on clothes in 3D.");
-	var facebookShareLink = "https://widget.trimirror.com/VendorSharing/Facebook?clientId=" + trimirror_clientId + "&link=#link#&items=" + encodeURIComponent($("#productDetails h1").html());
+	var facebookShareLink = "https://widget.trimirror.com/VendorSharing/Facebook?clientId=" + trimirror_clientId + "&link=" + window.location.href + "&items=" + encodeURIComponent($("#productDetails h1").html()) + "&img=#img#";
 	contentSmall += '<div class="slide video_view"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>';
 	contentSmall += "</div>";
 	contentSmall += '<div class="buttons"><div><button class="sqs-suppress-edit-mode sqs-editable-button" id="side-by-side-button"><div class="sqs-add-to-cart-button-inner">Compare side-by-side</div></button><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner">Add to Dressing Room</div></button></div></div>';
@@ -203,7 +203,7 @@ var select_size;
        			defaultAvatar = false;
        		}
        		$("#pinterest_share").attr("href", $("#pinterest_share").attr("data-href").replace("#media#", $(".trimiror_big_slide[data-target='" + target + "'] img").attr("src")));
-       		$("#facebook_share").attr("href", $("#facebook_share").attr("data-href").replace("#link#", $(".trimiror_big_slide[data-target='" + target + "'] img").attr("src")));
+       		$("#facebook_share").attr("href", $("#facebook_share").attr("data-href").replace("#img#", $(".trimiror_big_slide[data-target='" + target + "'] img").attr("src")));
        		facebook_share
         	return false;
         });
@@ -341,7 +341,7 @@ function AddToFavorites(){
                         $(".trimiror_big_slide[data-target='" + (i + 1) + "'] img:first").attr("src", urlImage);
                         if(i == 0)
                         	$("#pinterest_share").attr("href", $("#pinterest_share").attr("data-href").replace("#media#", urlImage));
-                        	$("#facebook_share").attr("href", $("#facebook_share").attr("data-href").replace("#link#", urlImage));
+                        	$("#facebook_share").attr("href", $("#facebook_share").attr("data-href").replace("#img#", urlImage));
                     }
                     $(".timer_container .timer-loader").hide();
                     //$("#preloader").hide();
