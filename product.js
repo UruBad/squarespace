@@ -77,7 +77,7 @@ var select_size;
                 counter++;
 	}
 	var shareText = encodeURI("Check out the Jean Shop virtual fitting room and customize your own avatar to try on clothes in 3D.");
-	var facebookShareLink = var shareLink = "https://widget.trimirror.com/VendorSharing/Facebook?clientId=" + trimirror_clientId + "&link=#link#&items=" + encodeURIComponent($("#productDetails h1").html());
+	var facebookShareLink = "https://widget.trimirror.com/VendorSharing/Facebook?clientId=" + trimirror_clientId + "&link=#link#&items=" + encodeURIComponent($("#productDetails h1").html());
 	contentSmall += '<div class="slide video_view"><a class="catwalk catwalk_movie" href="#" title="View catwalk" style="margin-left:16px;" onclick="openPopup();return false;"></a></div>';
 	contentSmall += "</div>";
 	contentSmall += '<div class="buttons"><div><button class="sqs-suppress-edit-mode sqs-editable-button" id="side-by-side-button"><div class="sqs-add-to-cart-button-inner">Compare side-by-side</div></button><button class="sqs-suppress-edit-mode sqs-editable-button" id="add-to-favorites"><div class="sqs-add-to-cart-button-inner">Add to Dressing Room</div></button></div></div>';
