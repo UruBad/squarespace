@@ -10,10 +10,10 @@ $(document).ready(function () {
     var privacyPolicy = '<div class="yui3-widget sqs-widget sqs-widgets-confirmation alert shown" style="opacity:0;z-index:-1" id="privacy_policy"><div class="sqs-widgets-confirmation-content clear"><div class="title">Privacy Policy</div><div class="message">' + privacyPolicyText + '</div><div class="buttons"><div class="confirmation-button no-frame confirm" tabindex="3">Okay</div></div></div></div>';
     $("#tabs").append(privacyPolicy);
     $("#privacy_policy .confirm").click(function(){
-		$("#privacy_policy").animate({ opacity: "0", z-index:-1}, 500);
+		$("#privacy_policy").animate({ "opacity": "0", "z-index":"-1" }, 500);
 	});
 	$("#privacy_policy_link").click(function(){
-	    $("#privacy_policy").animate({ opacity: "1", z-index:1000}, 500);
+	    $("#privacy_policy").animate({ "opacity": "1", "z-index":"1000"}, 500);
 	    return false;
 	});
     var trimirror_cookie = $.cookie('trimirror_anonim_user_id');
